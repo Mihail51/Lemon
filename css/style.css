@@ -1,0 +1,99 @@
+@import url(reset.css);
+@import url(fonts.css);
+
+body {
+	max-width: 1440px;
+	height: auto;
+	background: #eaeaea;
+}
+/* LOGO MAIN */
+.logo_main {
+	width: 382px;
+	margin: 250px auto 119px;
+}
+.recipees {
+  display: none;
+
+}
+@media (max-width: 576px) {
+  body {
+    width: 100%;
+    background: #eaeaea;
+  }
+	.logo_main {
+		display: none;
+	}
+  #menuCheck:checked + #slider_recipees {
+    opacity: 0.3 !important;
+  }
+  .recipees {
+    display: block;
+    position: relative;
+    width: 320px;
+    margin: auto;
+  }  
+  .recipees figure {
+    width: 100%;
+    background: #fbfcfd;
+  }   
+  .recipees figure .recipees-foto {
+    display: block;
+    width: 100%;
+    height: 208px;
+    margin: 0 auto;
+  }
+  .recipees figure figcaption {
+    display: block;
+    width: 282px;
+    padding: 15px 0 33px 23px;
+  }
+  .recipees figure figcaption h4 {
+    font-family: JosefinSans-Light;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: left;
+    }
+  .recipees figure figcaption .icon {
+    display: block;
+  }
+  .recipees figure figcaption .icon p, 
+  .recipees figure figcaption .icon > img {
+    display: inline-block;
+    font-family: 'Open Sans';
+    color: #555555;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: left;
+    padding-left: 15px;
+  }
+  .recipees figure figcaption .icon p:first-child {
+    background: url(../img/Icon/Clock_Icon.png) no-repeat left center;
+  }
+  .recipees figure figcaption .icon p:nth-child(3) {
+    background: url(../img/Icon/Comment_Icon.png) no-repeat left center;
+  }
+  .recipees figure figcaption .icon p:last-child {
+    background: url(../img/Icon/View_Icon.png) no-repeat left center;
+  }
+  .sidebar_wrap {
+    width: 320px !important;
+  }
+  .sidebar_wrap .sidebar_left, 
+  .sidebar_wrap .cont_cen_right, 
+  .sidebar_wrap .sidebar_right, 
+  .sidebar_wrap .cont_cen_right .sidebar_right .content_right {
+    width: 100% !important;
+  }
+  .sidebar_wrap .cont_cen_right .sidebar_right .content_right {
+    margin-top: -20px !important;
+  }
+  .sidebar_wrap .sidebar_left .popular_now, 
+  .sidebar_wrap .sidebar_right .recipes_wrap {
+    width: 100% !important;
+    -webkit-background-size: cover !important;
+    background-size: cover !important;
+  }
+}
+
+

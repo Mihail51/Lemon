@@ -4,125 +4,143 @@
 	<meta charset="UTF-8">
 	<title>Lemon</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content="#" />
+  	<meta name="description" content="#" />
 	<meta name="keywords" content="#" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<link type="text/css" rel="stylesheet" href="css/header.css">
+	<link type="text/css" rel="stylesheet" href="css/slider.css">
+	<link type="text/css" rel="stylesheet" href="css/home_sidebar_1.css">
+	<link type="text/css" rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-<!--LOGO MAIN-->
-	<div class="logo">
-		<img src="img/Logo.png">
-	</div>
-<!--HEADER-->
-	<header>
-		<div class="logo_header">
-			<img src="img/logo_header.png">
+  <div class="logo_main">
+	  <img src="img/Logo.png" alt="">
+  </div>
+	<!-- HEADER -->
+  <header class="main-header">
+    <div class="header-wrap">
+      <div class="logo_header">
+        <img src="img/logo_header.png">
+      </div>
+      <nav class="main-menu">
+        <div class="menu">
+          <label class="menu-Toggle" for="menuCheck"><img src="img/Burger.png" alt=""></label>
+          <input id="menuCheck" type="checkbox">
+          <ul class="menuBig">
+            <li><a href="#">HOME</a></li>
+            <li class="submenu">Recipes
+              <ul class="menuLittle">
+                <li><a href="html/recomended.html">RECOMMENDED</a></li>
+                <li><a href="html/popular.html">POPULAR</a></li>
+                <li><a href="html/quick_and_easy.html">QUICK & EASY</a></li>
+                <li><a href="html/healthy.html">HEALTHY</a></li>
+                <li><a href="html/newest.html">NEWEST</a></li>
+              </ul>
+            </li>
+            <li><a href="html/foto.html">Photo Galleries</a></li>
+            <li><a href="html/video.html">Videos</a></li>
+            <li><a href="html/recipees.html">All Categories</a></li>
+          </ul>
+        </div>
+      </nav>
+      <form class="search" action="search.php">
+        <input type="submit"><input type="search" placeholder="FIND A RECIPE">
+      </form>
+    </div>
+  </header>
+  <!-- SLIDER -->
+  <article id="slider_recipees">       
+    	<input checked type="radio" name="slider_big" id="switch1">
+    	<input type="radio" name="slider_big" id="switch2">
+    	<input type="radio" name="slider_big" id="switch3">
+    	<input type="radio" name="slider_big" id="switch4">
+    	<input type="radio" name="slider_big" id="switch5">
+	    <div id="slides_recipe">  
+			<div class="content content_1">
+				<div class="foto">
+					<img src="img/pexels-photo-104987.jpg" alt="" class="foto">
+				</div>
+				<div class="description">
+					<img src="img/Logo_hero_page.png" alt="Logo" class="herologo">
+					<h2>Bananas Foster Ice Cream Cake</h2>
+					<p>If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake</p>
+					<form action="html/recipe.html" target="_blank">
+						<button>Get it recipe</button>
+					</form>
+				</div>
+			</div>
+			<div class="content content_2">
+				<div class="foto">
+					<img src="img/pexels-photo-176038_1.jpg" alt="" class="foto">
+				</div>
+				<div class="description">
+					<img src="img/Logo_hero_page.png" alt="Logo" class="herologo">
+					<h2>Bananas Foster Ice Cream Cake 2</h2>
+					<p>If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake</p>
+					<form action="html/recipe.html" target="_blank">
+						<button>Get it recipe</button>
+					</form>
+				</div>
+			</div>
+			<div class="content content_3">
+				<div class="foto">
+					<img src="img/pexels-photo-218844.jpg" alt="" class="foto">
+				</div>
+				<div class="description">
+					<img src="img/Logo_hero_page.png" alt="Logo" class="herologo">
+					<h2>Bananas Foster Ice Cream Cake 3</h2>
+					<p>If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake</p>
+					<form action="html/recipe.html" target="_blank">
+						<button>Get it recipe</button>
+					</form>
+				</div>
+			</div>
+			<div class="content content_4">
+				<div class="foto">
+					<img src="img/recipe_blog.jpg" alt="" class="foto">
+				</div>
+				<div class="description">
+					<img src="img/Logo_hero_page.png" alt="Logo" class="herologo">
+					<h2>Bananas Foster Ice Cream Cake 4</h2>
+					<p>If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake</p>
+					<form action="html/recipe.html" target="_blank">
+						<button>Get it recipe</button>
+					</form>
+				</div>
+			</div>
+			<div class="content content_5">
+				<div class="foto">
+					<img src="img/recipe_1.jpg" alt="" class="foto">
+				</div>
+				<div class="description">
+					<img src="img/Logo_hero_page.png" alt="Logo" class="herologo">
+					<h2>Bananas Foster Ice Cream Cake 5</h2>
+					<p>If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake</p>
+					<form action="html/recipe.html" target="_blank">
+						<button>Get it recipe</button>
+					</form>
+				</div>
+			</div>
 		</div>
-		<nav>
-			<label class="menuToggle" for="menuCheck"><img src="img/Burger.png"></label>
-			<input id="menuCheck" type="checkbox" name="">
-			<ul class="menu-big">
-				<li><a href="#" target="_blank">HOME</a></li>
-				<li class="submenu recipes current">
-					<label class="menuRecipes" for="menuCheck1">Recipes</label>
-					<input id="menuCheck1" type="checkbox" name="">
-					<ul class="menu-recipes">
-						<li><a href="#">RECOMMENDED</a></li>
-						<li><a href="#">POPULAR</a></li>
-						<li><a href="#">QUICK & EASY</a></li>
-						<li><a href="#">HEALTHY</a></li>
-						<li><a href="#">NEWEST</a></li>
-					</ul>
-				</li>
-				<li><a href="html/fotos.html" target="_blank">Photo Galleries</a></li>
-				<li><a href="#">Videos</a></li>
-				<li><a href="#">All Categor</a></li>
-			</ul>
-		</nav>
-		<form action="search.php">
-			<p><input type="submit" name="a" value=""><input type="search" name="a" placeholder="Find a recipe"></p>
-		</form>
-	</header>
-<!--HERO PAGE-->
-	<section class="Hero_Page">
-		<div class="content">
-			<div class="logo_hero">
-				<img src="img/Logo_hero_page.png">
-			</div>
-			<div class="recipe">
-				<h2>Bananas Foster Ice Cream Cake</h1>
-				<p>If you're looking for decadence, look no further — you've found the Holy Grail of desserts. Honestly, this cake makes us wonder why Bananas Foster hasn't always been served on top of ice cream cake</p>
-			</div>
-			
-		</div>
-	</section>
-<!--SIDE BAR-->
-	<div class="side_bar">
-		<!--recipe blog-->
-		<aside class="recipe_blog">
-			<h3>Chi-Chi or Chichi</h3>
-			<div class="info_wrap">
-				<img src="img/w-222.jpg">
-				<div class="info">
-					<p><span class="fw300">Recipe by</span><br>Smuckersreg Toppings</p>
-					<div class="icon">
-						<p class="time">15 mins</p>
-						<img src="img/Line.png">
-						<p class="comment">12</p>
-						<p class="view">37</p>
-					</div>
-				</div>
-			</div>
-		</aside>
-		<!--author-->
-		<section class="author_wrap">
-			<div class="author_title">
-				<h4>Author</h4>
-			</div>
-			<div class="author_info_wrap">
-				<img src="img/w-13.jpg">
-				<div class="author_info">
-					<div class="author_header">
-						<p class="name">Karen Gray</p>
-						<p class="usa">United States</p>
-						<div class="social">
-							<a href=""><img src="img/Icon/Autor_Google.png"></a>
-							<a href=""><img src="img/Icon/Autor_Twitter.png"></a>
-							<a href=""><img src="img/Icon/Autor_Facebook.png"></a>
-							<a href=""><img src="img/Icon/Autor_Pinteres.png"></a>
-						</div>
-					</div>
-					<div class="author_description_wrap">
-						<h4>About Lemon</h4>
-						<p class="author_description">Over the fifteen-year life span of Food.com, we’ve learned that – in addition to eating – sharing is what you do best. And thanks to the 20 million of you who come here each month, we now have 500,000 recipes to show for it, more than anywhere else in the digital universe. We also have tons crazy-tempting photos, troves of recipe reviews and more than 2 million Facebook likes. That’s a heck of a lot of Food. Thank you!</p>
-						<img src="img/Signature.png">
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--popular-->
-		<aside class="popular_now">
-			<h3>Popular Now</h3>
-			<p class="popular_title">Vanilla Frozen Coffee</p>
-			<p class="popular_recipe">Mix coffee, sugar and creamer.<br>Pour into blender and add ice cubes.<br>Blend until smooth.</p>
-			<div class="popular_icon">
-				<form action="#" target="_blank">
-					<button>GET IT RECIPE</button>
-				</form>
-				<div class="icon">
-					<p class="time">6 mins</p>
-					<img src="img/Line.png">
-					<p class="comment">240</p>
-					<p class="view">400</p>
-				</div>
-			</div>
-		</aside>
-	</div>
-<!--RECIPES FOTOS-->
-	<div class="recipees">
+		<div id="controls">
+	    	<label for="switch1"></label>
+	    	<label for="switch2"></label>
+	    	<label for="switch3"></label>
+	    	<label for="switch4"></label>
+	    	<label for="switch5"></label>
+	    </div>
+  </article>
+  <!--RECIPEES for width < 576px -->
+  <div class="recipees">
 		<figure>
-			<a href="#"><img class="foto foto_1" src="img/2135_1.jpg"></a>
+			<a href="html/long.html"><img class="recipees-foto recipees-foto_1" src="img/recipe_1.jpg"></a>
 			<figcaption>
 				<h4>Raspberry &amp; Cream Frozen Yogurt Pie</h4>
 				<div class="icon">
@@ -134,7 +152,7 @@
 			</figcaption>
 		</figure>
 		<figure>
-			<a href="#"><img class="foto foto_2" src="img/2136_1.jpg"></a>
+			<a href="html/middle.html"><img class="recipees-foto recipees-foto_2" src="img/recipe_2.jpg"></a>
 			<figcaption>
 				<h4>Giant Ice Cream Sandwich</h4>
 				<div class="icon">
@@ -146,7 +164,7 @@
 			</figcaption>
 		</figure>
 		<figure>
-			<a href="#"><img class="foto foto_3" src="img/2135_1.jpg"></a>
+			<a href="html/quick_and_easy.html"><img class="recipees-foto recipees-foto_3" src="img/recipe_3.jpg"></a>
 			<figcaption>
 				<h4>Dark Chocolate Crunch Ice Cream<br>Sandwich Cake</h4>
 				<div class="icon">
@@ -158,40 +176,781 @@
 			</figcaption>
 		</figure>
 	</div>
-<!--FOOTER-->
+  <!-- HOME SIDEBAR -->
+  <main class="sidebar_wrap">
+		<aside class="sidebar_left">
+			<!-- CHICHI -->
+			<div class="chichi_wrap">
+				<h3>Chi-Chi or Chichi</h3>
+				<article id="slider_chichi">
+						<input checked type="radio" name="slider_chichi" id="resipe1">
+						<input type="radio" name="slider_chichi" id="resipe2">
+						<input type="radio" name="slider_chichi" id="resipe3">
+						<input type="radio" name="slider_chichi" id="resipe4">
+						<input type="radio" name="slider_chichi" id="resipe5">
+					<div id="slides_chichi">
+						<figure class="recipe_chichi recipe_chichi1">
+							<figcaption>
+								<div class="info_wrap">
+									<img src="img/w-222.jpg">
+									<div class="info">
+										<p><span class="fw300">Recipe by</span><br>Smuckersreg Toppings</p>
+										<div class="icon">
+											<p class="time">15 mins</p>
+											<img src="img/Line.png">
+											<p class="comment">12</p>
+											<p class="view">37</p>
+										</div>
+									</div>
+								</div>
+							</figcaption>
+							<a href="html/recipe.html"><img src="img/recipe_blog.jpg" alt=""></a>
+						</figure>
+						<figure class="recipe_chichi recipe_chichi2">
+							<figcaption>
+								<div class="info_wrap">
+									<img src="img/w-222.jpg">
+									<div class="info">
+										<p><span class="fw300">Recipe by</span><br>Smuckersreg Toppings</p>
+										<div class="icon">
+											<p class="time">15 mins</p>
+											<img src="img/Line.png">
+											<p class="comment">12</p>
+											<p class="view">37</p>
+										</div>
+									</div>
+								</div>
+							</figcaption>
+							<a href="html/recipe.html"><img src="img/recipe_1.jpg" alt=""></a>
+						</figure>
+						<figure class="recipe_chichi recipe_chichi3">
+							<figcaption>
+								<div class="info_wrap">
+									<img src="img/w-222.jpg">
+									<div class="info">
+										<p><span class="fw300">Recipe by</span><br>Smuckersreg Toppings</p>
+										<div class="icon">
+											<p class="time">15 mins</p>
+											<img src="img/Line.png">
+											<p class="comment">12</p>
+											<p class="view">37</p>
+										</div>
+									</div>
+								</div>
+							</figcaption>
+							<a href="html/recipe.html"><img src="img/recipe_2.jpg" alt=""></a>
+						</figure>
+						<figure class="recipe_chichi recipe_chichi4">
+							<figcaption>
+								<div class="info_wrap">
+									<img src="img/w-222.jpg">
+									<div class="info">
+										<p><span class="fw300">Recipe by</span><br>Smuckersreg Toppings</p>
+										<div class="icon">
+											<p class="time">15 mins</p>
+											<img src="img/Line.png">
+											<p class="comment">12</p>
+											<p class="view">37</p>
+										</div>
+									</div>
+								</div>
+							</figcaption>
+							<a href="html/recipe.html"><img src="img/recipe_3.jpg" alt=""></a>
+						</figure>
+						<figure class="recipe_chichi recipe_chichi5">
+							<figcaption>
+								<div class="info_wrap">
+									<img src="img/w-222.jpg">
+									<div class="info">
+										<p><span class="fw300">Recipe by</span><br>Smuckersreg Toppings</p>
+										<div class="icon">
+											<p class="time">15 mins</p>
+											<img src="img/Line.png">
+											<p class="comment">12</p>
+											<p class="view">37</p>
+										</div>
+									</div>
+								</div>
+							</figcaption>
+							<a href="html/recipe.html"><img src="img/pexels-photo-104987.jpg" alt=""></a>
+						</figure>
+					</div>
+					<div id="controls_chichi">
+						<label for="resipe1"></label>
+						<label for="resipe2"></label>
+						<label for="resipe3"></label>
+						<label for="resipe4"></label>
+						<label for="resipe5"></label>
+					</div>
+				</article>
+			</div>
+			<!-- POPULAR -->
+			<div class="popular_now">
+				<h3>Popular Now</h3>
+				<p class="popular_title">Vanilla Frozen Coffee</p>
+				<p class="popular_recipe">Mix coffee, sugar and creamer.<br>Pour into blender and add ice cubes.<br>Blend until smooth.</p>
+				<div class="popular_icon">
+					<form action="html/recipe.html" target="_blank">
+						<button>get it recipe</button>
+					</form>
+					<div class="icon">
+						<p class="time">6 mins</p>
+						<img src="img/Line.png">
+						<p class="comment">240</p>
+						<p class="view">400</p>
+					</div>
+				</div>
+			</div>
+			<!-- TIMELINE -->
+			<div class="timeline_wrap">
+				<div class="block_header">
+					<p class="name">Timeline</p>
+					<div class="icons">
+						<a href=""><img src="img/Icon/Print.png" alt=""></a>
+						<a href=""><img src="img/Icon/Maile.png" alt=""></a>
+						<a href=""><img src="img/Icon/Facebook.png" alt=""></a>
+						<a href=""><img src="img/Icon/Pinteres.png" alt=""></a>
+					</div>
+				</div>
+				<div class="timeline_content">
+					<h3>Time line</h3>
+					<div class="timeline_graf">
+						<div class="magnitude easy">
+							<p>Easy</p>
+							<figure>
+								<figcaption>15mins</figcaption>
+								<img src="img/Easy.png" alt="">
+							</figure>
+						</div>
+						<div class="magnitude middle">
+							<p>Middle</p>
+							<figure>
+								<figcaption>25mins</figcaption>
+								<img src="img/Middle.png" alt="">
+							</figure>
+						</div>
+						<div class="magnitude long">
+							<p>Long</p>
+							<figure>
+								<figcaption>40mins</figcaption>
+								<img src="img/Long.png" alt="">
+							</figure>
+						</div>
+					</div>
+				</div>
+				<div class="timeline_footer">
+					<p>Eam adhuc iudico percipitur ex,<br>ut malis audire voluptaria has.</p>
+				</div>
+			</div>
+		</aside>
+		<div class="cont_cen_right">
+			<section>
+				<!-- AUTHOR -->
+				<section class="author_wrap">
+					<div class="author_title">
+						<h4>Author</h4>
+					</div>
+					<div class="author_info_wrap">
+						<img src="img/w-13.jpg">
+						<div class="author_info">
+							<div class="author_header">
+								<p class="name">Karen Gray</p>
+								<p class="usa">United States</p>
+								<div class="social">
+									<a href="#"><img src="img/Icon/Autor_Google.png"></a>
+									<a href="#"><img src="img/Icon/Autor_Twitter.png"></a>
+									<a href="#"><img src="img/Icon/Autor_Facebook.png"></a>
+									<a href="#"><img src="img/Icon/Autor_Pinteres.png"></a>
+								</div>
+							</div>
+							<div class="author_description_wrap">
+								<h4>About Lemon</h4>
+								<p class="author_description">Over the fifteen-year life span of Food.com, we’ve learned that – in addition to eating – sharing is what you do best. And thanks to the 20 million of you who come here each month, we now have 500,000 recipes to show for it, more than anywhere else in the digital universe. We also have tons crazy-tempting photos, troves of recipe reviews and more than 2 million Facebook likes. That’s a heck of a lot of Food. Thank you!</p>
+								<img src="img/Signature.png">
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- CALENDAR -->
+				<div class="calendar_wrap">
+					<h3>Calendar</h3>
+					<article id="slider_calendar">
+						<input type="radio" name="slider_calendar" id="month1">
+						<input checked type="radio" name="slider_calendar" id="month2">
+						<input type="radio" name="slider_calendar" id="month3">
+						<input type="radio" name="slider_calendar" id="month4">
+						<input type="radio" name="slider_calendar" id="month5">
+					<div id="slides_calemdar">
+						<div class="month month1" id="m1">
+							<div class="month_header">
+							<p>February 2019</p>
+							</div>
+							<article class="month_content">
+								<table>
+									<tr>
+										<th>Su</th>
+										<th>Mo</th>
+										<th>Tu</th>
+										<th>We</th>
+										<th>Th</th>
+										<th>Fr</th>
+										<th>Sa</th>
+									</tr>
+									<tr>
+										<td class="past"><a href="">27</a></td>
+										<td class="past"><a href="">28</a></td>
+										<td class="past"><a href="">29</a></td>
+										<td class="past"><a href="">30</a></td>
+										<td class="past"><a href="">31</a></td>
+										<td><a href="">1</a></td>
+										<td><a href="">2</a></td>
+									</tr>
+									<tr>
+										<td><a href="">3</a></td>
+										<td><a href="">4</a></td>
+										<td><a href="">5</a></td>
+										<td><a href="">6</a></td>
+										<td><a href="">7</a></td>
+										<td><a href="">8</a></td>
+										<td><a href="">9</a></td>
+									</tr>
+									<tr>
+										<td><a href="">10</a></td>
+										<td><a href="">11</a></td>
+										<td><a href="">12</a></td>
+										<td><a href="">13</a></td>
+										<td><a href="">14</a></td>
+										<td><a href="">15</a></td>
+										<td><a href="">16</a></td>
+									</tr>
+									<tr>
+										<td><a href="">17</a></td>
+										<td><a href="">18</a></td>
+										<td><a href="">19</a></td>
+										<td><a href="">20</a></td>
+										<td><a href="">21</a></td>
+										<td><a href="">22</a></td>
+										<td><a href="">23</a></td>
+									</tr>
+									<tr>
+										<td><a href="">24</a></td>
+										<td><a href="">25</a></td>
+										<td><a href="">26</a></td>
+										<td><a href="">27</a></td>
+										<td><a href="">28</a></td>
+										<td class="past"><a href="">1</a></td>
+										<td class="past"><a href="">2</a></td>
+									</tr>
+								</table>
+							</article>
+						</div>
+						<div class="month month2" id="m2">
+							<div class="month_header">
+							<p>March 2019</p>
+							</div>
+							<article class="month_content">
+								<table>
+									<tr>
+										<th>Su</th>
+										<th>Mo</th>
+										<th>Tu</th>
+										<th>We</th>
+										<th>Th</th>
+										<th>Fr</th>
+										<th>Sa</th>
+									</tr>
+									<tr>
+										<td class="past"><a href="">27</a></td>
+										<td class="past"><a href="">28</a></td>
+										<td class="past"><a href="">29</a></td>
+										<td class="past"><a href="">30</a></td>
+										<td class="past"><a href="">31</a></td>
+										<td><a href="">1</a></td>
+										<td><a href="">2</a></td>
+									</tr>
+									<tr>
+										<td><a href="">3</a></td>
+										<td><a href="">4</a></td>
+										<td><a href="">5</a></td>
+										<td><a href="">6</a></td>
+										<td><a href="">7</a></td>
+										<td><a href="">8</a></td>
+										<td><a href="">9</a></td>
+									</tr>
+									<tr>
+										<td><a href="">10</a></td>
+										<td><a href="">11</a></td>
+										<td><a href="">12</a></td>
+										<td><a href="">13</a></td>
+										<td><a href="">14</a></td>
+										<td><a href="">15</a></td>
+										<td><a href="">16</a></td>
+									</tr>
+									<tr>
+										<td><a href="">17</a></td>
+										<td><a href="">18</a></td>
+										<td><a href="">19</a></td>
+										<td><a href="">20</a></td>
+										<td><a href="">21</a></td>
+										<td><a href="">22</a></td>
+										<td><a href="">23</a></td>
+									</tr>
+									<tr>
+										<td><a href="">24</a></td>
+										<td><a href="">25</a></td>
+										<td><a href="">26</a></td>
+										<td><a href="">27</a></td>
+										<td><a href="">28</a></td>
+										<td class="past"><a href="">1</a></td>
+										<td class="past"><a href="">2</a></td>
+									</tr>
+								</table>
+							</article>
+						</div>
+						<div class="month month3" id="m3">
+							<div class="month_header">
+							<p>April 2019</p>
+							</div>
+							<article class="month_content">
+								<table>
+									<tr>
+										<th>Su</th>
+										<th>Mo</th>
+										<th>Tu</th>
+										<th>We</th>
+										<th>Th</th>
+										<th>Fr</th>
+										<th>Sa</th>
+									</tr>
+									<tr>
+										<td class="past"><a href="">27</a></td>
+										<td class="past"><a href="">28</a></td>
+										<td class="past"><a href="">29</a></td>
+										<td class="past"><a href="">30</a></td>
+										<td class="past"><a href="">31</a></td>
+										<td><a href="">1</a></td>
+										<td><a href="">2</a></td>
+									</tr>
+									<tr>
+										<td><a href="">3</a></td>
+										<td><a href="">4</a></td>
+										<td><a href="">5</a></td>
+										<td><a href="">6</a></td>
+										<td><a href="">7</a></td>
+										<td><a href="">8</a></td>
+										<td><a href="">9</a></td>
+									</tr>
+									<tr>
+										<td><a href="">10</a></td>
+										<td><a href="">11</a></td>
+										<td><a href="">12</a></td>
+										<td><a href="">13</a></td>
+										<td><a href="">14</a></td>
+										<td><a href="">15</a></td>
+										<td><a href="">16</a></td>
+									</tr>
+									<tr>
+										<td><a href="">17</a></td>
+										<td><a href="">18</a></td>
+										<td><a href="">19</a></td>
+										<td><a href="">20</a></td>
+										<td><a href="">21</a></td>
+										<td><a href="">22</a></td>
+										<td><a href="">23</a></td>
+									</tr>
+									<tr>
+										<td><a href="">24</a></td>
+										<td><a href="">25</a></td>
+										<td><a href="">26</a></td>
+										<td><a href="">27</a></td>
+										<td><a href="">28</a></td>
+										<td class="past"><a href="">1</a></td>
+										<td class="past"><a href="">2</a></td>
+									</tr>
+								</table>
+							</article>
+						</div>
+						<div class="month month4" id="m4">
+							<div class="month_header">
+							<p>May 2019</p>
+							</div>
+							<article class="month_content">
+								<table>
+									<tr>
+										<th>Su</th>
+										<th>Mo</th>
+										<th>Tu</th>
+										<th>We</th>
+										<th>Th</th>
+										<th>Fr</th>
+										<th>Sa</th>
+									</tr>
+									<tr>
+										<td class="past"><a href="">27</a></td>
+										<td class="past"><a href="">28</a></td>
+										<td class="past"><a href="">29</a></td>
+										<td class="past"><a href="">30</a></td>
+										<td class="past"><a href="">31</a></td>
+										<td><a href="">1</a></td>
+										<td><a href="">2</a></td>
+									</tr>
+									<tr>
+										<td><a href="">3</a></td>
+										<td><a href="">4</a></td>
+										<td><a href="">5</a></td>
+										<td><a href="">6</a></td>
+										<td><a href="">7</a></td>
+										<td><a href="">8</a></td>
+										<td><a href="">9</a></td>
+									</tr>
+									<tr>
+										<td><a href="">10</a></td>
+										<td><a href="">11</a></td>
+										<td><a href="">12</a></td>
+										<td><a href="">13</a></td>
+										<td><a href="">14</a></td>
+										<td><a href="">15</a></td>
+										<td><a href="">16</a></td>
+									</tr>
+									<tr>
+										<td><a href="">17</a></td>
+										<td><a href="">18</a></td>
+										<td><a href="">19</a></td>
+										<td><a href="">20</a></td>
+										<td><a href="">21</a></td>
+										<td><a href="">22</a></td>
+										<td><a href="">23</a></td>
+									</tr>
+									<tr>
+										<td><a href="">24</a></td>
+										<td><a href="">25</a></td>
+										<td><a href="">26</a></td>
+										<td><a href="">27</a></td>
+										<td><a href="">28</a></td>
+										<td class="past"><a href="">1</a></td>
+										<td class="past"><a href="">2</a></td>
+									</tr>
+								</table>
+							</article>
+						</div>
+						<div class="month month5" id="m5">
+							<div class="month_header">
+							<p>June 2019</p>
+							</div>
+							<article class="month_content">
+								<table>
+									<tr>
+										<th>Su</th>
+										<th>Mo</th>
+										<th>Tu</th>
+										<th>We</th>
+										<th>Th</th>
+										<th>Fr</th>
+										<th>Sa</th>
+									</tr>
+									<tr>
+										<td class="past"><a href="">27</a></td>
+										<td class="past"><a href="">28</a></td>
+										<td class="past"><a href="">29</a></td>
+										<td class="past"><a href="">30</a></td>
+										<td class="past"><a href="">31</a></td>
+										<td><a href="">1</a></td>
+										<td><a href="">2</a></td>
+									</tr>
+									<tr>
+										<td><a href="">3</a></td>
+										<td><a href="">4</a></td>
+										<td><a href="">5</a></td>
+										<td><a href="">6</a></td>
+										<td><a href="">7</a></td>
+										<td><a href="">8</a></td>
+										<td><a href="">9</a></td>
+									</tr>
+									<tr>
+										<td><a href="">10</a></td>
+										<td><a href="">11</a></td>
+										<td><a href="">12</a></td>
+										<td><a href="">13</a></td>
+										<td><a href="">14</a></td>
+										<td><a href="">15</a></td>
+										<td><a href="">16</a></td>
+									</tr>
+									<tr>
+										<td><a href="">17</a></td>
+										<td><a href="">18</a></td>
+										<td><a href="">19</a></td>
+										<td><a href="">20</a></td>
+										<td><a href="">21</a></td>
+										<td><a href="">22</a></td>
+										<td><a href="">23</a></td>
+									</tr>
+									<tr>
+										<td><a href="">24</a></td>
+										<td><a href="">25</a></td>
+										<td><a href="">26</a></td>
+										<td><a href="">27</a></td>
+										<td><a href="">28</a></td>
+										<td class="past"><a href="">1</a></td>
+										<td class="past"><a href="">2</a></td>
+									</tr>
+								</table>
+							</article>
+						</div>
+					</div>
+					<div id="controls_calendar">
+						<label for="month1"></label>
+						<label for="month2"></label>
+						<label for="month3"></label>
+						<label for="month4"></label>
+						<label for="month5"></label>
+					</div>
+					<div id="active_calendar">
+						<label for="month1"></label>
+						<label for="month2"></label>
+						<label for="month3"></label>
+						<label for="month4"></label>
+						<label for="month5"></label>
+					</div>
+				</article>
+			</div>
+			</section>
+			<aside class="sidebar_right">
+				<!-- LOGIN & SIGNIN-->
+				<div class="client-wrap">
+					<div class="buttons">
+						<div class="btn login_btn" id="login_btn"><a href="#loginwindow" id="log_in_close">login</a></div>
+						<div class="btn sign_in_btn" id="sign_in_btn"><a href="#signinwindow" id="sign_in_close">sign_in</a></div>
+					</div>
+					<div id="loginwindow" class="window">
+						<aside class="login" id="log_in">
+							<div class="header_client">
+								<p>Login</p>
+								<a class="cansel" href="#login_btn"><img src="img/cancel.png" alt=""></a>
+							</div>
+							<section class="content_login">
+								<form action="/login" method="post">
+									<h3>Login for LEMON</h3>
+									<input type="email" name="email_adres" id="email_login" placeholder="email or ligin">
+									<input type="password" name="pass" id="pass_login" placeholder="password">
+									<input type="checkbox" name="remember" id="rem" value="Remember me"><span>Remember me</span>
+									<a href="">Forgot your password ?</a>
+									<input type="submit" value="Login">
+								</form>
+							</section>
+							<div class="footer_client">
+								<div class="social">
+									<a href="#"><img src="img/Icon/facebook_in.png" alt=""></a>
+									<a href="#"><img src="img/Icon/Google_in.png" alt=""></a>
+								</div>
+								<p>Don't have an accont ?&nbsp;<a href="#signinwindow">Sign in</a></p>
+							</div>
+						</aside>
+					</div>
+					<div id="signinwindow" class="window">
+						<aside class="sign_in" id="sign_in">
+							<div class="header_client">
+								<p>	Sign in</p>
+								<a class="cansel" href="#sign_in_btn"><img src="img/cancel.png" alt=""></a>
+							</div>
+							<section class="content_sign_in">
+								<form action="/sign-in" method="post">
+									<h3>Sign in for LEMON</h3>
+									<input type="email" name="email_adres" id="email_sign"
+									placeholder="email">
+									<input type="text" name="user_name" id="name" placeholder="user_name">
+									<input type="password" name="password" id="pass_sign" placeholder="password">
+									<input type="password" name="password_r" id="pass_sign_r" placeholder="reapet password">
+									<input type="submit" value="Sign ap">
+								</form>
+							</section>
+							<div class="footer_client">
+								<div class="social">
+									<a href="#"><img src="img/Icon/facebook_in.png" alt=""></a>
+									<a href="#"><img src="img/Icon/Google_in.png" alt=""></a>
+								</div>
+								<p>By joining LEMON, you agree to our<br ><a href="#">Terms of Service</a></p>
+								<a href="#loginwindow">login</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+				<!-- RECIPE -->
+				<div class="content_right">
+					<div class="recipes_wrap">
+						<div class="block_header">
+							<p class="name">Recipe</p>
+							<div class="icons">
+								<a href=""><img src="img/Icon/Print.png" alt=""></a>
+								<a href=""><img src="img/Icon/Maile.png" alt=""></a>
+								<a href=""><img src="img/Icon/Facebook.png" alt=""></a>
+								<a href=""><img src="img/Icon/Pinteres.png" alt=""></a>
+							</div>
+						</div>
+						<div class="slider_recipes_wrap">
+							<div class="slider_recipes">
+								<label for="slide-1" checked >Easy</label>
+								<label for="slide-2">Middle</label>
+								<label for="slide-3">Long</label>	
+							</div>
+							<input checked type="radio" name="slides" id="slide-1">
+							<div class="slide_recipe slide-one">
+								<figure class="recipe_slide recipe_1">
+									<img src="img/recipe_1.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla<br>Thanks for the recipe lore</p>
+									</figcaption>
+								</figure>
+								<figure class="recipe_slide recipe_2">
+									<img src="img/recipe_2.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
+									</figcaption>
+								</figure>
+								<figure class="recipe_slide recipe_3">
+									<img src="img/recipe_3.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
+									</figcaption>
+								</figure>
+								<form action="html/quick_and_easy.html" target="_blank">
+									<button>view more</button>
+								</form>
+							</div>
+							<input type="radio" name="slides" id="slide-2">
+							<div class="slide_recipe slide-two">
+								<figure class="recipe_slide recipe_2-1">
+									<img src="img/pexels-photo-104987.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla<br>Thanks for the recipe lore</p>
+									</figcaption>
+								</figure>
+								<figure class="recipe_slide recipe_2-2">
+									<img src="img/pexels-photo-176038.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
+									</figcaption>
+								</figure>
+								<figure class="recipe_slide recipe_2-3">
+									<img src="img/pexels-photo-218844.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
+									</figcaption>
+								</figure>
+								<form action="html/middle.html" target="_blank">
+									<button>view more</button>
+								</form>
+							</div>
+							<input type="radio" name="slides" id="slide-3">
+							<div class="slide_recipe slide-three">
+								<figure class="recipe_slide recipe_3-1">
+									<img src="img/recipe_blog.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla<br>Thanks for the recipe lore</p>
+									</figcaption>
+								</figure>
+								<figure class="recipe_slide recipe_3-2">
+									<img src="img/recipe_2.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
+									</figcaption>
+								</figure>
+								<figure class="recipe_slide recipe_3-3">
+									<img src="img/Photo_Coffee.png" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
+									</figcaption>
+								</figure>
+								<form action="html/long.html" target="_blank">
+									<button>view more</button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- TARGET -->
+					<div class="target_wrap">
+						<div class="block_header">
+							<p class="name">Target</p>
+							<div class="icons">
+								<a href="#"><img src="img/Icon/Print.png" alt=""></a>
+								<a href="#"><img src="img/Icon/Maile.png" alt=""></a>
+								<a href="#"><img src="img/Icon/Facebook.png" alt=""></a>
+								<a href="#"><img src="img/Icon/Pinteres.png" alt=""></a>
+							</div>
+						</div>
+						<div class="target_content">
+							<h3>Presentation line</h3>
+							<div class="target_graf housewives">
+								<div class="target_grafic">19%</div>
+								<div class="target_description">
+									<h3>Housewives</h3>
+									<p>Lorem ipsum dolor sit amet, prima ceteros.</p>
+								</div>
+							</div>
+							<div class="target_graf newlyweds">
+								<div class="target_grafic">65%</div>
+								<div class="target_description">
+									<h3>Newlyweds</h3>
+									<p>Has brute elitr deserunt ea, assentior eloquentiam neglegentur te sed.</p>
+								</div>
+							</div>
+							<div class="target_graf business_lady">
+								<div class="target_grafic">50%</div>
+								<div class="target_description">
+									<h3>Business lady</h3>
+									<p>Ei nam primis putent signiferumque.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- TAGS -->
+					<div class="tags-wrap">
+						<h3>Tags</h3>
+						<div class="tags_content">#yummy &nbsp;&nbsp;#sweet &nbsp;&nbsp;#dinner &nbsp;&nbsp;#lunch<br>#breakfast &nbsp;&nbsp;#fresh &nbsp;&nbsp;#tasty &nbsp;&nbsp;#delish<br>#delicious &nbsp;&nbsp;#eating &nbsp;&nbsp;#food</div>
+					</div>
+				</div>
+			</aside>
+		</div>
+	</main>
+	<!-- FOOTER -->
 	<footer>
 		<div class="bot_menu">
 			<div class="logo_header">
 				<img src="img/Logo_footer.png">
 			</div>
 			<nav class="menu_footer">
-				<label class="menuToggle" for="menuCheck"><img src="img/Burger.png"></label>
-				<input id="menuCheck" type="checkbox" name="">
 				<ul class="menu-big">
-					<li><a href="#" target="_blank">HOME</a></li>
-					<li class="submenu recipes current">
-						<label class="menuRecipes1" for="menuCheck2">Recipes</label>
-						<input id="menuCheck2" type="checkbox" name="">
+					<li><a href="#" target="_blank">Home</a></li>
+					<li class="submenu recipes current">Recipes
 						<ul class="menu-recipes menu-recipes-footer">
-							<li><a href="#">RECOMMENDED</a></li>
-							<li><a href="#">POPULAR</a></li>
-							<li><a href="#">QUICK & EASY</a></li>
-							<li><a href="#">HEALTHY</a></li>
-							<li><a href="#">NEWEST</a></li>
+							<li><a href="html/recomended.html">Recommended</a></li>
+							<li><a href="html/popular.html">Popular</a></li>
+							<li><a href="html/quick_and_easy.html">Quick & Easy</a></li>
+							<li><a href="html/healthy.html">Healhy</a></li>
+							<li><a href="html/newest.html">Newest</a></li>
 						</ul>
 					</li>
-					<li><a href="html/fotos.html" target="_blank">Photo Galleries</a></li>
-					<li><a href="#">Videos</a></li>
-					<li><a href="#">All Categor</a></li>
+					<li><a href="html/foto.html" target="_blank">Photo Galleries</a></li>
+					<li><a href="html/video.html">Videos</a></li>
+					<li><a href="html/recipees.html">All Categor</a></li>
 				</ul>
 			</nav>
-			<div class="copiright">&copy; 2016-2017 LEMON. All right reserved</div>
-		</div>
-		<div class="social">
-			<a class="google"href="#"><img src="img/Icon/google_futor.png"></a>
-			<a class="twitter"href="#"><img src="img/Icon/twitter_futtor.png"></a>
-			<a class="facebook"href="#"><img src="img/Icon/facebook_futor.png"></a>
-			<a class="pinteres"href="#"><img src="img/Icon/pinteres_futtor.png"></a>
+			<hr>
+			<div class="copiright">&copy; 2016-2017 LEMON.&shy; All&nbsp;right&nbsp;reserved</div>
+			<div class="social">
+				<a class="google" href="#"><img src="img/Icon/google_futor.png"></a>
+				<a class="twitter" href="#"><img src="img/Icon/twitter_futtor.png"></a>
+				<a class="facebook" href="#"><img src="img/Icon/facebook_futor.png"></a>
+				<a class="pinteres" href="#"><img src="img/Icon/pinteres_futtor.png"></a>
+			</div>
 		</div>
 	</footer>
 </body>
