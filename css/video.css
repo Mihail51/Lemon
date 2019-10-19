@@ -1,27 +1,27 @@
 @import url(reset.css);
 @import url(fonts.css);
 
-
 h1 {
-	font-family: 'PlayfairDisplay-Black';
-	font-size: 45px;
-	margin: 50px auto;
-	text-align: center;
-	text-decoration: underline;
-	text-shadow: 1px 3px 2px;
-}   
+  font-family: "PlayfairDisplay-Black";
+  font-size: 45px;
+  margin: 50px auto;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 1px 3px 2px;
+}
 .recipees {
-	justify-content: space-around;
+  justify-content: space-around;
 }
 .recipees figure {
-	position: relative;
-	width: auto;
+  position: relative;
+  width: auto;
 }
-video {
-	height: 200px;
+iframe {
+  width: 355px;
+  height: 200px;
 }
 @media (max-width: 576px) {
-	video {
-		height: 175px;
-	}
-} 
+  video {
+    height: 175px;
+  }
+}
