@@ -163,13 +163,13 @@
 #controls_chichi label:nth-child(5) {
 	background: url(../img/pexels-photo-104987.jpg) no-repeat center center / 100% 100%;
 }  
-#controls_chichi label:hover, 
-#resipe1:checked ~ #controls_chichi label:nth-child(1), 
-#resipe2:checked ~ #controls_chichi label:nth-child(2), 
-#resipe3:checked ~ #controls_chichi label:nth-child(3), 
-#resipe4:checked ~ #controls_chichi label:nth-child(4), 
-#resipe5:checked ~ #controls_chichi label:nth-child(5) {
-	background: #555;
+#controls_chichi label:hover .color, 
+#resipe1:checked ~ #controls_chichi label:nth-child(1) .color, 
+#resipe2:checked ~ #controls_chichi label:nth-child(2) .color, 
+#resipe3:checked ~ #controls_chichi label:nth-child(3) .color, 
+#resipe4:checked ~ #controls_chichi label:nth-child(4) .color, 
+#resipe5:checked ~ #controls_chichi label:nth-child(5) .color {
+	display: block;
 	cursor: pointer;
 }  
 #resipe1:checked ~ #slides_chichi {
