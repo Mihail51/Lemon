@@ -283,154 +283,129 @@
 	padding-left: 14px;
 }  */
 /* Featured recipe (бывший Popular Now) */
-.featured-recipe {
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 1.5rem 1.75rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+/* Featured recipe — вариант 2 (тёмная карточка с фото) */
+/* Блок на тёмном фоне */
+.featured-recipe--dark {
+  position: relative;
+  width: 289px;
+  height: 349px;
+
+  background: #111; /* fallback */
+  color: #fff;
+  overflow: hidden;
+
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  font-family: inherit;
-}
-.featured-recipe {
-  position: relative;        /* добавили позиционирование для псевдоэлемента */
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 1.5rem 1.75rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  font-family: inherit;
-  overflow: hidden;          /* чтобы хвост картинки не вылезал за границы */
+  justify-content: flex-start;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 27px 21px 0 16px;
+  border-radius: 12px;
+
+  box-shadow: 0 0 13px rgba(0,0,0,0.15);
 }
 
-/* Кофейная картинка как декоративный фон */
-.featured-recipe::after {
+/* Фоновое изображение: рука с кофе */
+.featured-recipe--dark::before {
   content: "";
   position: absolute;
-  right: -20px;              /* можно подрегулировать */
-  bottom: -40px;             /* можно подрегулировать */
-  width: 230px;              /* размеры тоже можно подогнать */
-  height: 230px;
-  background: url("../img/Photo_Coffee.png") no-repeat center / contain;
-  opacity: 1;
-  pointer-events: none;      /* чтобы не мешала кликам по кнопке */
+  inset: 0;
+  background: 
+    linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.1)),
+    url("../img/Photo_Coffee.png") center bottom no-repeat;
+  background-size: cover;
   z-index: 0;
+  opacity: 0.9;
 }
 
-/* чтобы текст и кнопка были поверх */
-.featured-recipe > * {
+/* Поднимаем весь контент поверх */
+.featured-recipe--dark > * {
   position: relative;
   z-index: 1;
 }
 
-
-/* Заголовок блока (надпись "Popular Now" / "Рецепт дня") */
-.featured-recipe__title {
-  margin: 0;
+/* Заголовок */
+.featured-recipe--dark .featured-recipe__title {
   font-size: 0.9rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #a0a0a0;
+  color: #e5e5e5;
+  margin-bottom: 12px;
 }
 
 /* Название рецепта */
-.featured-recipe__headline {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #333333;
+.featured-recipe--dark .featured-recipe__headline {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffffff;
 }
 
-/* Описание */
-.featured-recipe__description {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #555555;
+/* Текст */
+.featured-recipe--dark .featured-recipe__description {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin-bottom: 20px;
+  color: #f1f1f1;
 }
 
-/* Нижняя зона: кнопка + мета-информация */
-.featured-recipe__meta {
-  margin-top: 1rem;
+/* Нижний блок */
+.featured-recipe--dark .featured-recipe__meta {
+  margin-top: 17px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
-}
-
-/* Чтобы форма не добавляла лишних отступов */
-.featured-recipe__form {
-  margin: 0;
-}
-
-/* Кнопка */
-.featured-recipe__button {
-  display: inline-block;
-  padding: 0.6rem 1.4rem;
-  border-radius: 999px;
-  border: none;
-  background-color: #ffc857; /* тёплый "лимонный" акцент */
-  color: #2f2f2f;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
-}
-
-.featured-recipe__button:hover,
-.featured-recipe__button:focus {
-  background-color: #ffb937;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  transform: translateY(-1px);
-}
-
-.featured-recipe__button:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Иконки/метрики справа */
-.featured-recipe__icons {
-  display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 0.8rem;
-  color: #777777;
 }
 
-/* Время с вертикальной линией справа (вместо картинки Line.png) */
+/* Кнопка — акцентная */
+.featured-recipe--dark .featured-recipe__button {
+  background-color: #ffc857;
+  color: #222;
+  padding: 0.6rem 0.3rem;
+  border: none;
+  border-radius: 999px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans';
+}
+
+.featured-recipe--dark .featured-recipe__button:hover {
+  background-color: #ffb937;
+}
+
+/* Метрики */
+.featured-recipe--dark .featured-recipe__icons {
+  display: flex;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #e0e0e0;
+}
+
+.featured-recipe--dark .featured-recipe__time {
+  padding-right: 10px;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
 .featured-recipe__time {
-  margin: 0;
-  padding-right: 0.75rem;
-  border-right: 1px solid #e0e0e0;
+  background: url("../img/Icon/Clock_Icon.png") no-repeat left center;
+  padding-left: 16px;
 }
 
-/* Комментарии и просмотры */
-.featured-recipe__comments,
+.featured-recipe__comments {
+  background: url("../img/Icon/Comment_Icon.png") no-repeat left center;
+  padding-left: 16px;
+}
+
 .featured-recipe__views {
-  margin: 0;
+  background: url("../img/Icon/View_Icon.png") no-repeat left center;
+  padding-left: 16px;
 }
 
-/* Мобильная адаптация: стекаем мета-блок вертикально */
-@media (max-width: 576px) {
-  .featured-recipe {
-    padding: 1.25rem 1.25rem;
-  }
 
-  .featured-recipe__meta {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  .featured-recipe__icons {
-    gap: 0.5rem;
-  }
-}
 
 
 /* TIMELINE */
