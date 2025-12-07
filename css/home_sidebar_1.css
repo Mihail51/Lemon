@@ -408,102 +408,120 @@
 
 
 
-/* TIMELINE */
-.sidebar_wrap .sidebar_left .timeline_wrap {
-	box-sizing: border-box;
-	width: 290px;
-	height: 430px;
-	margin: 24px 0;
-	padding: 27px 21px 0 16px;
-	background-color: #ffffff;
-	box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.15);
-}  
-.block_header {
-	width: 100%;
-	height: 34px;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-between;
-	border-bottom: 2px solid #dddddd;
+/* TIMELINE – новая карточка в правом сайдбаре */
+.timeline_wrap {
+  box-sizing: border-box;
+  width: 289px;
+  height: auto;
+  margin: 24px 0;
+  padding: 24px 18px 18px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.15);
+  font-family: 'Josefin Sans';
 }
-.block_header .name {
-	font-family: 'Josefin Sans';
-	font-size: 20px;
-}  
-.sidebar_wrap .sidebar_left .timeline_wrap .timeline_content {
-	width: 100%;
-	height: 255px;
-	padding: 16px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	
+
+/* Заголовок блока (Timeline + иконки) */
+.timeline_wrap .block_header {
+  width: 100%;
+  height: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #dddddd;
+  margin-bottom: 16px;
 }
-.sidebar_wrap .sidebar_left .timeline_wrap .timeline_content h3 {
-	font-family: 'PlayfairDisplay-Black';
-	font-weight: 900;
-    font-style: normal;
-    font-size: 20px;
+
+.timeline_wrap .block_header .name {
+  font-size: 20px;
+  font-weight: 400;
 }
-.sidebar_wrap .sidebar_left .timeline_wrap .timeline_content .timeline_graf {
-	width: 100%;
-	height: 200px;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-around;
-	align-items: flex-end;
-	padding-bottom: 16px;
-	border-bottom: 2px solid #dddddd;
-}  
-.sidebar_wrap .sidebar_left .timeline_wrap .timeline_content .timeline_graf .magnitude figcaption {
-	color: #555555;
-	font-size: 14px;
-	font-weight: 300;
-	text-align: left;
-	transform: rotate(-90deg) translateY(10px) translateX(5px) scaleY(1.0102);
-	transform-origin: left bottom;
+
+/* Контент внутри */
+.timeline_wrap .timeline_content {
+  width: 100%;
+  padding: 8px 0 0;
+  box-sizing: border-box;
 }
-.sidebar_wrap .sidebar_left .timeline_wrap .timeline_content .timeline_graf .magnitude p {
-	font-family: JosefinSans-Light;
-	color: #888;
-	font-size: 18px;
-	font-weight: 300;
-	text-align: left;
-	text-transform: uppercase;
-}   
-.sidebar_wrap .sidebar_left .timeline_wrap .timeline_content .timeline_graf .easy p {
-	display: inline-block;  
-	transform: rotate(-90deg) translateY(-5px) translateX(-60px) scaleY(1.1094);
-	transform-origin: center bottom;
+
+.timeline_wrap .timeline_content h3 {
+  font-family: 'PlayfairDisplay-Black';
+  font-weight: 900;
+  font-size: 18px;
+  margin: 0 0 10px;
 }
-.sidebar_wrap .sidebar_left .timeline_wrap .timeline_content .timeline_graf .middle p {
-	display: inline-block;   
-	transform: rotate(-90deg) translateX(-80px) scaleY(1.1094);
-	transform-origin: center bottom;
+
+/* График */
+
+/* Общая сетка графика */
+.timeline_graf {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 20px 0 16px;
+  border-bottom: 2px solid #dddddd;
 }
-.sidebar_wrap .sidebar_left .timeline_wrap .timeline_content .timeline_graf .long p {
-	display: inline-block;   
-	transform: rotate(-90deg) translateY(-4px) translateX(-122px) scaleY(1.1094);
-	transform-origin: center bottom;
+
+/* Один элемент графика */
+.timeline_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.sidebar_wrap .sidebar_left .timeline_wrap .timeline_content .timeline_graf .magnitude figure {
-	float: right;
+
+/* Вертикальная подпись EASY / MIDDLE / LONG */
+.timeline_label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg); /* чтобы читалось сверху вниз */
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 10px;
+  font-family: 'Josefin Sans';
 }
-.sidebar_wrap .sidebar_left .timeline_wrap .timeline_footer {
-	width: 100%;
-	padding: 16px;
-	font-family: JosefinSans-Light;
-	color: #6a6a6a;
-	font-size: 16px;
-	font-weight: 300;
-	text-align: left;
+
+/* Время над столбцом */
+.timeline_time {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 6px;
+  font-family: 'Josefin Sans';
 }
+
+/* Столбики */
+.timeline_bar {
+  width: 12px;
+  border-radius: 6px;
+}
+
+/* Высоты и цвета */
+.bar-easy {
+  height: 60px;
+  background-color: #71c2b3;
+}
+
+.bar-middle {
+  height: 110px;
+  background-color: #2d8c85;
+}
+
+.bar-long {
+  height: 150px;
+  background-color: #c01563;
+}
+
+
+/* Низ блока – текст-подпись */
+.timeline_wrap .timeline_footer {
+  width: 100%;
+  padding-top: 14px;
+  font-family: 'Josefin Sans';
+  color: #6a6a6a;
+  font-size: 13px;
+  font-weight: 300;
+  text-align: left;
+}
+
+
 .sidebar_wrap section {
 	width: 518px;
 }
@@ -606,6 +624,7 @@
 
 
 /* CALENDAR */
+/*
 .calendar_wrap {
 	box-sizing: border-box;
 	width: 290px;
@@ -728,7 +747,7 @@
 }
 #month5:checked ~ #slides_calemdar {
 	margin-left: -400%;
-} 
+} */
 
 
 /* LOGIN & SIGNIN*/
@@ -1042,6 +1061,7 @@
 }
 
 /* TARGET */
+/*
 .sidebar_wrap .sidebar_right .target_wrap {
 	box-sizing: border-box;
 	width: 290px;
@@ -1110,9 +1130,10 @@
 	font-weight: 300;
 	font-style: italic;
 	text-align: left;
-}
+}  */
 
 /* TAGS */
+/*
 .sidebar_wrap .sidebar_right .tags-wrap {
 	box-sizing: border-box;
 	width: 290px;
@@ -1140,7 +1161,7 @@
 	line-height: 250%;
 	text-align: left;
 	text-transform: uppercase;
-}
+}  */
 
 @media (max-width: 1200px) {
 	.sidebar_wrap {
