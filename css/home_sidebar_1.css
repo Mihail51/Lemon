@@ -491,22 +491,38 @@
 .timeline_bar {
   width: 12px;
   border-radius: 6px;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  animation: timeline-bar-grow 0.8s ease-out forwards;
 }
 
 /* Высоты и цвета */
 .bar-easy {
   height: 60px;
   background-color: #71c2b3;
+  animation-delay: 0.0s;
 }
 
 .bar-middle {
   height: 110px;
   background-color: #2d8c85;
+  animation-delay: 0.12s;
 }
 
 .bar-long {
   height: 150px;
   background-color: #c01563;
+  animation-delay: 0.24s;
+}
+
+/* Кадры анимации */
+@keyframes timeline-bar-grow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
 }
 
 
@@ -946,7 +962,183 @@
 } 
 
 
-/* RECIPE */
+/* RECIPE – карточка с рецептами (Easy / Middle / Long) */
+.sidebar_wrap .sidebar_right .recipes_wrap {
+	box-sizing: border-box;
+	width: 290px;
+	min-height: 430px;
+	margin: 24px 0;
+	padding: 24px 16px 18px;
+	background-color: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 0 13px rgba(0, 0, 0, 0.15);
+
+	display: flex;
+	flex-direction: column;
+}
+
+/* Заголовок блока (Recipe + иконки) использует общий .block_header */
+.sidebar_wrap .sidebar_right .recipes_wrap .block_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;      /* центрируем по вертикали */
+	margin-bottom: 8px;       /* чуть отодвинем от табов */
+}
+
+.sidebar_wrap .sidebar_right .recipes_wrap .block_header .name {
+	margin: 0;
+	font-size: 18px;          /* можно чуть меньше, чем 20, чтобы не давило */
+	line-height: 1.2;
+}
+
+.sidebar_wrap .sidebar_right .recipes_wrap .block_header .icons {
+	display: flex;
+	gap: 8px;
+}
+
+.sidebar_wrap .sidebar_right .recipes_wrap .block_header .icons img {
+	width: 14px;
+	height: 14px;
+	display: block;
+}
+
+/* Обёртка для табов + слайдов */
+.sidebar_wrap .sidebar_right .recipes_wrap .slider_recipes_wrap {
+	position: relative;
+	margin-top: 16px;
+	padding-top: 8px;
+}
+
+/* Табы EASY / MIDDLE / LONG */
+.sidebar_wrap .sidebar_right .recipes_wrap .slider_recipes {
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Josefin Sans';
+	font-size: 13px;                 /* было 12 */
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: #b0b0b0;
+}
+
+/* сами табы */
+.sidebar_wrap .sidebar_right .recipes_wrap .slider_recipes label {
+	display: inline-block;
+	padding-bottom: 6px;
+	cursor: pointer;
+	border-bottom: 2px solid transparent;
+	transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.sidebar_wrap .sidebar_right .recipes_wrap .slider_recipes label:hover {
+	color: #333333;
+	border-color: #9bb;
+}
+
+/* Активный таб по :checked */
+#slide-1:checked ~ .slider_recipes label[for="slide-1"],
+#slide-2:checked ~ .slider_recipes label[for="slide-2"],
+#slide-3:checked ~ .slider_recipes label[for="slide-3"] {
+	color: #055555;
+	border-color: #055555;
+	font-weight: 600;
+}
+
+
+/* Радиокнопки прячем */
+.sidebar_wrap .sidebar_right .recipes_wrap input[type="radio"] {
+	display: none;
+}
+
+/* Область слайдов */
+.sidebar_wrap .sidebar_right .recipes_wrap .slide_recipe {
+	position: absolute;
+	top: 52px;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+	transform: translateX(10px);
+	transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Чтобы карточка не схлопывалась по высоте */
+.sidebar_wrap .sidebar_right .recipes_wrap .slider_recipes_wrap {
+	min-height: 280px;
+}
+
+/* Активный слайд */
+#slide-1:checked ~ .slide-one,
+#slide-2:checked ~ .slide-two,
+#slide-3:checked ~ .slide-three {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateX(0);
+}
+
+/* Отдельный рецепт внутри слайда */
+.sidebar_wrap .sidebar_right .recipes_wrap .recipe_slide {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	margin-bottom: 16px;
+}
+
+/* Картинка рецепта */
+.sidebar_wrap .sidebar_right .recipes_wrap .recipe_slide img {
+	width: 49px;
+	height: 45px;
+	border-radius: 6px;
+	object-fit: cover;
+}
+
+/* Текстовая часть */
+.sidebar_wrap .sidebar_right .recipes_wrap .recipe_slide h3 {
+	font-family: 'Josefin Sans';
+	font-size: 13px;
+	font-weight: 300;
+	margin: 0 0 4px;
+	color: #000000;
+}
+
+.sidebar_wrap .sidebar_right .recipes_wrap .recipe_slide h3 span {
+	font-weight: 700;
+}
+
+.sidebar_wrap .sidebar_right .recipes_wrap .recipe_slide p {
+	font-family: 'Josefin Sans';
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.5;
+	margin: 0;
+	color: #555555;
+}
+
+/* Кнопка "view more" */
+.sidebar_wrap .sidebar_right .recipes_wrap .slide_recipe form {
+	margin-top: 6px;
+	text-align: right;
+}
+
+.sidebar_wrap .sidebar_right .recipes_wrap .slide_recipe button {
+	padding: 0.35rem 1.0rem;
+	border-radius: 999px;
+	border: 1px solid #c2c2c2;
+	background-color: #ffffff;
+	font-family: 'Josefin Sans';
+	font-size: 11px;
+	font-weight: 300;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.sidebar_wrap .sidebar_right .recipes_wrap .slide_recipe button:hover {
+	background-color: #055555;
+	border-color: #055555;
+	color: #ffffff;
+}
+
+/*
 .sidebar_wrap .sidebar_right .recipes_wrap {
 	box-sizing: border-box;
 	width: 290px;
@@ -1058,7 +1250,7 @@
 	transition: left .65s ease-out;   
 	transform: translateY(0);  
 	transition: all .5s .5s;   
-}
+}  */
 
 /* TARGET */
 /*
