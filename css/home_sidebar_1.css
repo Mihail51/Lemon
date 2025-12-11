@@ -25,6 +25,206 @@
 }
 
 /* CHICHI */
+/* CHICHI (обновлённый стиль) */
+.sidebar_wrap .sidebar_left .chichi_wrap {
+	box-sizing: border-box;
+	width: 289px;
+	height: 349px;
+	margin: 24px 0;
+	padding: 20px 16px 16px;
+	background-color: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 0 13px rgba(0, 0, 0, 0.15);
+
+	display: flex;
+	flex-direction: column;
+}
+
+/* Заголовок Chi-Chi */
+.sidebar_wrap .sidebar_left .chichi_wrap h3 {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding-bottom: 10px;
+
+	font-family: 'Playfair Display';
+	color: #055555;
+	font-size: 20px;
+	font-weight: 900;
+	text-align: left;
+
+	border-bottom: 2px solid #dddddd;
+}
+
+/* Слайдер */
+.sidebar_wrap .sidebar_left .chichi_wrap #slider_chichi {
+	position: relative;
+	width: 100%;
+	flex: 1;
+	margin-top: 12px;
+	overflow: hidden;
+}
+.sidebar_wrap .sidebar_left .chichi_wrap #slider_chichi input {
+  display: none;
+}
+
+/* Лента слайдов (как было, только чуть мягче) */
+.sidebar_wrap .sidebar_left .chichi_wrap #slides_chichi {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: flex-start;
+	width: 500%;
+	height: 100%;
+	transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+.sidebar_wrap .sidebar_left .chichi_wrap #slides_chichi .recipe_chichi {
+	width: 289px;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Внутренний блок информации */
+.sidebar_wrap .sidebar_left .chichi_wrap #slides_chichi .info_wrap {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px 0 0;
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.sidebar_wrap .sidebar_left .chichi_wrap #slides_chichi .info_wrap > img {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+/* Текст возле аватара */
+.sidebar_wrap .sidebar_left .chichi_wrap #slides_chichi .info_wrap .info p {
+	font-family: 'Josefin Sans';
+	color: #000000;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.3;
+	margin: 0;
+	text-align: left;
+}
+
+.sidebar_wrap .sidebar_left .chichi_wrap #slides_chichi .info_wrap .info p span {
+	font-weight: 300;
+}
+
+/* Метрики под текстом */
+.sidebar_wrap .sidebar_left .chichi_wrap #slides_chichi .info_wrap .info .icon {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 6px;
+	font-family: 'Open Sans';
+	color: #555555;
+	font-size: 12px;
+	font-weight: 300;
+}
+
+.sidebar_wrap .sidebar_left .chichi_wrap #slides_chichi .info_wrap .info .icon .time {
+	background: url(../img/Icon/Clock_Icon.png) no-repeat center left;
+	padding-left: 14px;
+}
+
+.sidebar_wrap .sidebar_left .chichi_wrap #slides_chichi .info_wrap .info .icon .comment {
+	background: url(../img/Icon/Comment_Icon.png) no-repeat center left;
+	padding-left: 14px;
+}
+
+.sidebar_wrap .sidebar_left .chichi_wrap #slides_chichi .info_wrap .info .icon .view {
+	background: url(../img/Icon/View_Icon.png) no-repeat center left;
+	padding-left: 14px;
+}
+
+/* Картинка рецепта */
+.sidebar_wrap .sidebar_left .chichi_wrap figure > a img,
+.sidebar_wrap .sidebar_left .chichi_wrap figure > img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+/* Точки/превьюшки слайдера внизу */
+.sidebar_wrap .sidebar_left .chichi_wrap #slider_chichi #controls_chichi {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 6px;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+}
+
+#controls_chichi label {
+	position: relative;
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	margin: 0;
+	border-radius: 50%;
+	background-color: #ffffff;
+	border: 2px solid rgba(0,0,0,0.15);
+	overflow: hidden;
+	cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+#controls_chichi label:nth-child(1) {
+	background: url(../img/recipe_blog.jpg) no-repeat center center / cover;
+}
+#controls_chichi label:nth-child(2) {
+	background: url(../img/recipe_1.jpg) no-repeat center center / cover;
+}
+#controls_chichi label:nth-child(3) {
+	background: url(../img/recipe_2.jpg) no-repeat center center / cover;
+}
+#controls_chichi label:nth-child(4) {
+	background: url(../img/recipe_3.jpg) no-repeat center center / cover;
+}
+#controls_chichi label:nth-child(5) {
+	background: url(../img/pexels-photo-104987.jpg) no-repeat center center / cover;
+}
+
+/* Hover/active-состояния */
+#controls_chichi label:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+}
+
+/* Подсветка "активной" точки через .color, как в исходнике */
+#controls_chichi label .color {
+	display: none;
+}
+
+#controls_chichi label:hover .color,
+#resipe1:checked ~ #controls_chichi label:nth-child(1) .color,
+#resipe2:checked ~ #controls_chichi label:nth-child(2) .color,
+#resipe3:checked ~ #controls_chichi label:nth-child(3) .color,
+#resipe4:checked ~ #controls_chichi label:nth-child(4) .color,
+#resipe5:checked ~ #controls_chichi label:nth-child(5) .color {
+	display: block;
+}
+
+/* Сдвиги слайдов оставляем как были */
+#resipe1:checked ~ #slides_chichi { margin-left: 0; }
+#resipe2:checked ~ #slides_chichi { margin-left: -100%; }
+#resipe3:checked ~ #slides_chichi { margin-left: -200%; }
+#resipe4:checked ~ #slides_chichi { margin-left: -300%; }
+#resipe5:checked ~ #slides_chichi { margin-left: -400%; }
+
+/*
 .sidebar_wrap .sidebar_left .chichi_wrap {
 	box-sizing: border-box;
 	width: 290px;
@@ -191,7 +391,7 @@
 #resipe5:checked ~ #slides_chichi {
 	margin-left: -400%;
 }
-
+*/
 /* POPULAR */
 /*
 .sidebar_wrap .sidebar_left .popular_now {
@@ -542,6 +742,139 @@
 	width: 518px;
 }
 /* AUTHOR */
+/* AUTHOR (обновлённый стиль) */
+.sidebar_wrap section .author_wrap {
+	box-sizing: border-box;
+	width: 518px;
+	height: 519px;
+	margin: 48px 0;
+	padding: 24px 32px 24px 32px;
+	background-color: #ffffff;
+	border-radius: 16px;
+	box-shadow: 0 0 13px rgba(0, 0, 0, 0.15);
+
+	display: flex;
+	flex-direction: column;
+}
+
+/* Заголовок "Author" / "About author" */
+.sidebar_wrap section .author_wrap .author_title {
+	width: 100%;
+	height: auto;
+	padding: 0 0 10px 4px;
+	margin: 0 0 20px 0;
+
+	font-family: 'Josefin Sans';
+	color: #000000;
+	font-size: 20px;
+	font-weight: 400;
+	text-align: left;
+
+	border-bottom: 2px solid #dddddd;
+}
+
+/* Основной блок: фото + текст */
+.sidebar_wrap section .author_wrap .author_info_wrap {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 20px;
+}
+
+/* Фото автора */
+.sidebar_wrap section .author_wrap .author_info_wrap > img {
+	width: 132px;
+	height: 132px;
+	border-radius: 50%;
+	object-fit: cover;
+	flex-shrink: 0;
+}
+
+/* Правая колонка с текстом */
+.sidebar_wrap section .author_wrap .author_info_wrap .author_info {
+	width: 100%;
+	height: auto;
+	z-index: 100;
+}
+
+/* Верхний блок: имя, страна, соцсети */
+.sidebar_wrap section .author_wrap .author_info_wrap .author_info .author_header {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 8px 0 16px 0;
+	border-bottom: 2px solid #dddddd;
+}
+
+/* Имя */
+.sidebar_wrap section .author_wrap .author_info_wrap .author_info .author_header .name {
+	font-family: 'Josefin Sans';
+	color: #000000;
+	font-size: 24px;
+	font-weight: 700;
+	text-align: left;
+	margin: 0 0 4px 0;
+}
+
+/* Страна / город */
+.sidebar_wrap section .author_wrap .author_info_wrap .author_info .author_header .usa {
+	font-family: 'Josefin Sans';
+	color: #666666;
+	font-size: 14px;
+	font-weight: 300;
+	text-align: left;
+	margin: 0 0 10px 0;
+}
+
+/* Соц.сети */
+.sidebar_wrap section .author_wrap .author_info_wrap .author_info .author_header .social {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin: 0;
+}
+
+.sidebar_wrap section .author_wrap .author_info_wrap .author_info .author_header .social a {
+	margin: 0;
+	display: inline-flex;
+}
+
+/* Описание автора */
+.sidebar_wrap section .author_wrap .author_info_wrap .author_info .author_description_wrap {
+	width: 100%;
+	margin-top: 20px;
+}
+
+/* Подзаголовок (например, "About me") */
+.sidebar_wrap section .author_wrap .author_info_wrap .author_info .author_description_wrap > h4 {
+	font-family: 'Josefin Sans';
+	color: #000000;
+	font-size: 18px;
+	font-weight: 400;
+	text-align: left;
+	margin: 0 0 18px 0;
+}
+
+/* Текст-описание */
+.sidebar_wrap section .author_wrap .author_info_wrap .author_info .author_description_wrap > p {
+	font-family: 'Josefin Sans';
+	color: #000000;
+	font-size: 14px;
+	font-weight: 300;
+	font-style: italic;
+	text-align: left;
+	line-height: 1.6;
+	margin: 0 0 18px 0;
+}
+
+/* Подпись / логотип (если есть) */
+.sidebar_wrap section .author_wrap .author_info_wrap .author_info .author_description_wrap > img {
+	width: 163px;
+	height: 63px;
+	margin-left: auto;
+	display: block;
+}
+
+/*
 .author_wrap {
 	box-sizing: border-box;
 	width: 518px;
@@ -637,7 +970,7 @@
 	height: 63px;
 	margin-left: calc(100% - 163px);
 }
-
+*/
 
 /* CALENDAR */
 /*
