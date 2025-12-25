@@ -76,9 +76,7 @@ body {
   .recipees figure figcaption .icon p:last-child {
     background: url(../img/Icon/View_Icon.png) no-repeat left center;
   }
-  .sidebar_wrap {
-    width: 320px !important;
-  }
+  /*
   .sidebar_wrap .sidebar_left, 
   .sidebar_wrap .cont_cen_right, 
   .sidebar_wrap .sidebar_right, 
@@ -94,6 +92,7 @@ body {
     -webkit-background-size: cover !important;
     background-size: cover !important;
   }
+    */
 }
 
 

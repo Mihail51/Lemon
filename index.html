@@ -21,6 +21,8 @@
 </head>
 
 <body>
+<!--	<body id="top">  -->
+
 	<!-- HEADER -->
 	<header class="main-header">
 		<div class="logo_main">
@@ -204,6 +206,67 @@
 		<div class="layout__columns sidebar_wrap">
 			<!-- ЛЕВЫЙ САЙДБАР -->
 			<aside class="sidebar_left">
+				<!-- LOGIN & SIGNIN-->
+				<div class="client-wrap">
+					<div id="top"></div>
+					<div class="buttons">
+						<div class="btn login_btn" id="login_btn"><a href="#loginwindow" id="log_in_close">login</a></div>
+						<div class="btn sign_in_btn" id="sign_in_btn"><a href="#signinwindow" id="sign_in_close">sign_in</a>
+						</div>
+					</div>
+					<div id="loginwindow" class="window">
+						<aside class="login" id="log_in">
+							<div class="header_client">
+								<p>Login</p>
+								<a class="cansel" href="#top"><img src="img/cancel.png" alt=""></a>
+							</div>
+							<section class="content_login">
+								<form action="/login" method="post">
+									<h3>Login for LEMON</h3>
+									<input type="email" name="email_adres" id="email_login" placeholder="email or ligin">
+									<input type="password" name="pass" id="pass_login" placeholder="password">
+									<input type="checkbox" name="remember" id="rem" value="Remember me"><span>Remember
+										me</span>
+									<a href="">Forgot your password ?</a>
+									<input type="submit" value="Login">
+								</form>
+							</section>
+							<div class="footer_client">
+								<div class="social">
+									<a href="#"><img src="img/Icon/facebook_in.png" alt=""></a>
+									<a href="#"><img src="img/Icon/Google_in.png" alt=""></a>
+								</div>
+								<p>Don't have an accont ?&nbsp;<a href="#signinwindow">Sign in</a></p>
+							</div>
+						</aside>
+					</div>
+					<div id="signinwindow" class="window">
+						<aside class="sign_in" id="sign_in">
+							<div class="header_client">
+								<p> Sign in</p>
+								<a class="cansel" href="#top"><img src="img/cancel.png" alt=""></a>
+							</div>
+							<section class="content_sign_in">
+								<form action="/sign-in" method="post">
+									<h3>Sign in for LEMON</h3>
+									<input type="email" name="email_adres" id="email_sign" placeholder="email">
+									<input type="text" name="user_name" id="name" placeholder="user_name">
+									<input type="password" name="password" id="pass_sign" placeholder="password">
+									<input type="password" name="password_r" id="pass_sign_r" placeholder="reapet password">
+									<input type="submit" value="Sign ap">
+								</form>
+							</section>
+							<div class="footer_client">
+								<div class="social">
+									<a href="#"><img src="img/Icon/facebook_in.png" alt=""></a>
+									<a href="#"><img src="img/Icon/Google_in.png" alt=""></a>
+								</div>
+								<p>By joining LEMON, you agree to our<br><a href="#">Terms of Service</a></p>
+								<a href="#loginwindow">login</a>
+							</div>
+						</aside>
+					</div>
+				</div>
 				<!-- CHICHI -->
 				<div class="chichi_wrap">
 					<h3>Chi-Chi or Chichi</h3>
@@ -336,7 +399,7 @@
             </aside>
 				
 			<!-- ЦЕНТРАЛЬНАЯ КОЛОНКА -->
-			<div class="cont_cen_right">
+			<main class="content_center">
 				<section class="author_section">
 					<!-- Блок автора -->
 					<section class="author_wrap">
@@ -373,184 +436,14 @@
 						</div>
 					</section>
 				</section>
-				<!-- ПРАВЫЙ САЙДБАР -->
-				<aside class="sidebar_right">
-					<!-- LOGIN & SIGNIN-->
-					<div class="client-wrap">
-						<div class="buttons">
-							<div class="btn login_btn" id="login_btn"><a href="#loginwindow" id="log_in_close">login</a></div>
-							<div class="btn sign_in_btn" id="sign_in_btn"><a href="#signinwindow" id="sign_in_close">sign_in</a>
-							</div>
-						</div>
-						<div id="loginwindow" class="window">
-							<aside class="login" id="log_in">
-								<div class="header_client">
-									<p>Login</p>
-									<a class="cansel" href="#login_btn"><img src="img/cancel.png" alt=""></a>
-								</div>
-								<section class="content_login">
-									<form action="/login" method="post">
-										<h3>Login for LEMON</h3>
-										<input type="email" name="email_adres" id="email_login" placeholder="email or ligin">
-										<input type="password" name="pass" id="pass_login" placeholder="password">
-										<input type="checkbox" name="remember" id="rem" value="Remember me"><span>Remember
-											me</span>
-										<a href="">Forgot your password ?</a>
-										<input type="submit" value="Login">
-									</form>
-								</section>
-								<div class="footer_client">
-									<div class="social">
-										<a href="#"><img src="img/Icon/facebook_in.png" alt=""></a>
-										<a href="#"><img src="img/Icon/Google_in.png" alt=""></a>
-									</div>
-									<p>Don't have an accont ?&nbsp;<a href="#signinwindow">Sign in</a></p>
-								</div>
-							</aside>
-						</div>
-						<div id="signinwindow" class="window">
-							<aside class="sign_in" id="sign_in">
-								<div class="header_client">
-									<p> Sign in</p>
-									<a class="cansel" href="#sign_in_btn"><img src="img/cancel.png" alt=""></a>
-								</div>
-								<section class="content_sign_in">
-									<form action="/sign-in" method="post">
-										<h3>Sign in for LEMON</h3>
-										<input type="email" name="email_adres" id="email_sign" placeholder="email">
-										<input type="text" name="user_name" id="name" placeholder="user_name">
-										<input type="password" name="password" id="pass_sign" placeholder="password">
-										<input type="password" name="password_r" id="pass_sign_r" placeholder="reapet password">
-										<input type="submit" value="Sign ap">
-									</form>
-								</section>
-								<div class="footer_client">
-									<div class="social">
-										<a href="#"><img src="img/Icon/facebook_in.png" alt=""></a>
-										<a href="#"><img src="img/Icon/Google_in.png" alt=""></a>
-									</div>
-									<p>By joining LEMON, you agree to our<br><a href="#">Terms of Service</a></p>
-									<a href="#loginwindow">login</a>
-								</div>
-							</aside>
-						</div>
-					</div>
-					<!-- RECIPE -->
-					<div class="content_right">
-						<div class="recipes_wrap">
-							<div class="block_header">
-								<p class="name">Recipe</p>
-								<div class="icons">
-									<a href=""><img src="img/Icon/Print.png" alt=""></a>
-									<a href=""><img src="img/Icon/Maile.png" alt=""></a>
-									<a href=""><img src="img/Icon/Facebook.png" alt=""></a>
-									<a href=""><img src="img/Icon/Pinteres.png" alt=""></a>
-								</div>
-							</div>
-							<div class="slider_recipes_wrap">
-								<!-- Радиокнопки — наверху -->
-								<input checked type="radio" name="slides" id="slide-1">
-								<input type="radio" name="slides" id="slide-2">
-								<input type="radio" name="slides" id="slide-3">
-
-								<!-- Табы -->
-								<div class="slider_recipes">
-									<label for="slide-1">Easy</label>
-									<label for="slide-2">Middle</label>
-									<label for="slide-3">Long</label>
-								</div>
-
-								<!-- Слайд 1 -->
-								<div class="slide_recipe slide-one">
-									<figure class="recipe_slide recipe_1">
-										<img src="img/recipe_1.jpg" alt="">
-										<figcaption>
-											<h3>by <span>Smuckersreg Toppings</span></h3>
-											<p>Thanks for the recipe<br>lorem ipsum bla bla bla<br>Thanks for the recipe lore</p>
-										</figcaption>
-									</figure>
-									<figure class="recipe_slide recipe_2">
-										<img src="img/recipe_2.jpg" alt="">
-										<figcaption>
-											<h3>by <span>Smuckersreg Toppings</span></h3>
-											<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
-										</figcaption>
-									</figure>
-									<figure class="recipe_slide recipe_3">
-										<img src="img/recipe_3.jpg" alt="">
-										<figcaption>
-											<h3>by <span>Smuckersreg Toppings</span></h3>
-											<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
-										</figcaption>
-									</figure>
-									<form action="html/quick_and_easy.html" target="_blank">
-										<button>view more</button>
-									</form>
-								</div>
-
-								<!-- Слайд 2 -->
-								<div class="slide_recipe slide-two">
-									<figure class="recipe_slide recipe_2-1">
-										<img src="img/pexels-photo-104987.jpg" alt="">
-										<figcaption>
-											<h3>by <span>Smuckersreg Toppings</span></h3>
-											<p>Thanks for the recipe<br>lorem ipsum bla bla bla<br>Thanks for the recipe lore</p>
-										</figcaption>
-									</figure>
-									<figure class="recipe_slide recipe_2-2">
-										<img src="img/pexels-photo-176038.jpg" alt="">
-										<figcaption>
-											<h3>by <span>Smuckersreg Toppings</span></h3>
-											<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
-										</figcaption>
-									</figure>
-									<figure class="recipe_slide recipe_2-3">
-										<img src="img/pexels-photo-218844.jpg" alt="">
-										<figcaption>
-											<h3>by <span>Smuckersreg Toppings</span></h3>
-											<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
-										</figcaption>
-									</figure>
-									<form action="html/middle.html" target="_blank">
-										<button>view more</button>
-									</form>
-								</div>
-
-								<!-- Слайд 3 -->
-								<div class="slide_recipe slide-three">
-									<figure class="recipe_slide recipe_3-1">
-										<img src="img/recipe_blog.jpg" alt="">
-										<figcaption>
-											<h3>by <span>Smuckersreg Toppings</span></h3>
-											<p>Thanks for the recipe<br>lorem ipsum bla bla bla<br>Thanks for the recipe lore</p>
-										</figcaption>
-									</figure>
-									<figure class="recipe_slide recipe_3-2">
-										<img src="img/recipe_2.jpg" alt="">
-										<figcaption>
-											<h3>by <span>Smuckersreg Toppings</span></h3>
-											<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
-										</figcaption>
-									</figure>
-									<figure class="recipe_slide recipe_3-3">
-										<img src="img/Photo_Coffee.png" alt="">
-										<figcaption>
-											<h3>by <span>Smuckersreg Toppings</span></h3>
-											<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
-										</figcaption>
-									</figure>
-									<form action="html/long.html" target="_blank">
-										<button>view more</button>
-									</form>
-								</div>
-							</div>
-
-						</div>
-					</div>
-					<!-- TIMELINE -->
-					<div class="timeline_wrap">
+			</main>
+			<!-- ПРАВЫЙ САЙДБАР -->
+			<aside class="sidebar_right">
+				<!-- RECIPE -->
+				<div class="content_right">
+					<div class="recipes_wrap">
 						<div class="block_header">
-							<p class="name">Timeline</p>
+							<p class="name">Recipe</p>
 							<div class="icons">
 								<a href=""><img src="img/Icon/Print.png" alt=""></a>
 								<a href=""><img src="img/Icon/Maile.png" alt=""></a>
@@ -558,40 +451,150 @@
 								<a href=""><img src="img/Icon/Pinteres.png" alt=""></a>
 							</div>
 						</div>
-						<div class="timeline_content">
-							<h3>Time line</h3>
-							<div class="timeline_graf">
+						<div class="slider_recipes_wrap">
+							<!-- Радиокнопки — наверху -->
+							<input checked type="radio" name="slides" id="slide-1">
+							<input type="radio" name="slides" id="slide-2">
+							<input type="radio" name="slides" id="slide-3">
 
-								<!-- EASY -->
-								<div class="timeline_item">
-									<span class="timeline_label">EASY</span>
-									<span class="timeline_time">15 mins</span>
-									<div class="timeline_bar bar-easy"></div>
-								</div>
+							<!-- Табы -->
+							<div class="slider_recipes">
+								<label for="slide-1">Easy</label>
+								<label for="slide-2">Middle</label>
+								<label for="slide-3">Long</label>
+							</div>
 
-								<!-- MIDDLE -->
-								<div class="timeline_item">
-									<span class="timeline_label">MIDDLE</span>
-									<span class="timeline_time">25 mins</span>
-									<div class="timeline_bar bar-middle"></div>
-								</div>
+							<!-- Слайд 1 -->
+							<div class="slide_recipe slide-one">
+								<figure class="recipe_slide recipe_1">
+									<img src="img/recipe_1.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla<br>Thanks for the recipe lore</p>
+									</figcaption>
+								</figure>
+								<figure class="recipe_slide recipe_2">
+									<img src="img/recipe_2.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
+									</figcaption>
+								</figure>
+								<figure class="recipe_slide recipe_3">
+									<img src="img/recipe_3.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
+									</figcaption>
+								</figure>
+								<form action="html/quick_and_easy.html" target="_blank">
+									<button>view more</button>
+								</form>
+							</div>
 
-								<!-- LONG -->
-								<div class="timeline_item">
-									<span class="timeline_label">LONG</span>
-									<span class="timeline_time">40 mins</span>
-									<div class="timeline_bar bar-long"></div>
-								</div>
+							<!-- Слайд 2 -->
+							<div class="slide_recipe slide-two">
+								<figure class="recipe_slide recipe_2-1">
+									<img src="img/pexels-photo-104987.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla<br>Thanks for the recipe lore</p>
+									</figcaption>
+								</figure>
+								<figure class="recipe_slide recipe_2-2">
+									<img src="img/pexels-photo-176038.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
+									</figcaption>
+								</figure>
+								<figure class="recipe_slide recipe_2-3">
+									<img src="img/pexels-photo-218844.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
+									</figcaption>
+								</figure>
+								<form action="html/middle.html" target="_blank">
+									<button>view more</button>
+								</form>
+							</div>
 
+							<!-- Слайд 3 -->
+							<div class="slide_recipe slide-three">
+								<figure class="recipe_slide recipe_3-1">
+									<img src="img/recipe_blog.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla<br>Thanks for the recipe lore</p>
+									</figcaption>
+								</figure>
+								<figure class="recipe_slide recipe_3-2">
+									<img src="img/recipe_2.jpg" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
+									</figcaption>
+								</figure>
+								<figure class="recipe_slide recipe_3-3">
+									<img src="img/Photo_Coffee.png" alt="">
+									<figcaption>
+										<h3>by <span>Smuckersreg Toppings</span></h3>
+										<p>Thanks for the recipe<br>lorem ipsum bla bla bla</p>
+									</figcaption>
+								</figure>
+								<form action="html/long.html" target="_blank">
+									<button>view more</button>
+								</form>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- TIMELINE -->
+				<div class="timeline_wrap">
+					<div class="block_header">
+						<p class="name">Timeline</p>
+						<div class="icons">
+							<a href=""><img src="img/Icon/Print.png" alt=""></a>
+							<a href=""><img src="img/Icon/Maile.png" alt=""></a>
+							<a href=""><img src="img/Icon/Facebook.png" alt=""></a>
+							<a href=""><img src="img/Icon/Pinteres.png" alt=""></a>
+						</div>
+					</div>
+					<div class="timeline_content">
+						<h3>Time line</h3>
+						<div class="timeline_graf">
+
+							<!-- EASY -->
+							<div class="timeline_item">
+								<span class="timeline_label">EASY</span>
+								<span class="timeline_time">15 mins</span>
+								<div class="timeline_bar bar-easy"></div>
+							</div>
+
+							<!-- MIDDLE -->
+							<div class="timeline_item">
+								<span class="timeline_label">MIDDLE</span>
+								<span class="timeline_time">25 mins</span>
+								<div class="timeline_bar bar-middle"></div>
+							</div>
+
+							<!-- LONG -->
+							<div class="timeline_item">
+								<span class="timeline_label">LONG</span>
+								<span class="timeline_time">40 mins</span>
+								<div class="timeline_bar bar-long"></div>
 							</div>
 
 						</div>
-						<div class="timeline_footer">
-							<p>Eam adhuc iudico percipitur ex,<br>ut malis audire voluptaria has.</p>
-						</div>
+
 					</div>
-				</aside>
-			</div>
+					<div class="timeline_footer">
+						<p>Eam adhuc iudico percipitur ex,<br>ut malis audire voluptaria has.</p>
+					</div>
+				</div>
+			</aside>
 		</div>
 	</main>
 	<!-- End of Main-->
