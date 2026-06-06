@@ -1,0 +1,26 @@
+# backups / archives
+*.zip
+*.rar
+*.7z
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# temporary files
+*.tmp
+*.bak
+
+# logs
+*.log
+
+# diagnostics / local only
+phpinfo.php
+php-check.php
+
+# temporary login codes
+content/users/_codes.php
+
+# local backups
+public_html_backup_*.zip
