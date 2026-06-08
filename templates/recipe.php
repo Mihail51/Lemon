@@ -163,7 +163,7 @@ if (!empty($recipe['gallery']) && is_array($recipe['gallery'])) {
           ?>
 
           <?php if ($confidence !== '' && isset($confidenceLabels[$confidence])): ?>
-            <div class="recipe__source">
+            <div class="recipe__confidence">
               <strong>Уровень уверенности восстановления:</strong>
               <?= htmlspecialchars($confidenceLabels[$confidence], ENT_QUOTES, 'UTF-8') ?>
             </div>
@@ -194,7 +194,7 @@ if (!empty($recipe['gallery']) && is_array($recipe['gallery'])) {
               <?php endif; ?>
 
               <?php if (!empty($recipe['notes']) && is_array($recipe['notes'])): ?>
-              <div class="directions">
+              <div class="recipe__notes">
                 <h3>Примечания</h3>
                 <ul>
                   <?php foreach ($recipe['notes'] as $note): ?>
