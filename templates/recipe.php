@@ -114,6 +114,12 @@ if (!empty($recipe['gallery']) && is_array($recipe['gallery'])) {
             </div>
           <?php endif; ?>
 
+          <?php if (!empty($recipe['image_note'])): ?>
+            <div class="recipe__source">
+              <?= htmlspecialchars($recipe['image_note'], ENT_QUOTES, 'UTF-8') ?>
+            </div>
+          <?php endif; ?>
+
           <?php if (!empty($gallery)): ?>
             <div class="recipe__gallery">
               <div class="recipe__gallery-title">Gallery</div>
@@ -146,6 +152,23 @@ if (!empty($recipe['gallery']) && is_array($recipe['gallery'])) {
             </div>
           </div>
 
+          <?php
+          $confidenceLabels = [
+            'high' => 'Высокий',
+            'medium' => 'Средний',
+            'low' => 'Низкий',
+          ];
+
+          $confidence = $recipe['reconstruction_confidence'] ?? '';
+          ?>
+
+          <?php if ($confidence !== '' && isset($confidenceLabels[$confidence])): ?>
+            <div class="recipe__source">
+              <strong>Уровень уверенности восстановления:</strong>
+              <?= htmlspecialchars($confidenceLabels[$confidence], ENT_QUOTES, 'UTF-8') ?>
+            </div>
+          <?php endif; ?>
+
           <div class="description">
 
               <?php if (!empty($recipe['ingredients'])): ?>
@@ -169,6 +192,17 @@ if (!empty($recipe['gallery']) && is_array($recipe['gallery'])) {
                   </ol>
                 </div>
               <?php endif; ?>
+
+              <?php if (!empty($recipe['notes']) && is_array($recipe['notes'])): ?>
+              <div class="directions">
+                <h3>Примечания</h3>
+                <ul>
+                  <?php foreach ($recipe['notes'] as $note): ?>
+                    <li><?= htmlspecialchars($note, ENT_QUOTES, 'UTF-8') ?></li>
+                  <?php endforeach; ?>
+                </ul>
+              </div>
+            <?php endif; ?>
 
             </div>
 

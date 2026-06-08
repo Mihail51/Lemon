@@ -91,7 +91,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $time  = trim($_POST['time'] ?? '');
   $level = trim($_POST['level'] ?? '');
   $image = trim($_POST['image'] ?? '');
+
   $source_label = trim($_POST['source_label'] ?? '');
+  $image_note = trim($_POST['image_note'] ?? '');
+  $reconstruction_confidence = trim($_POST['reconstruction_confidence'] ?? '');
+  $notesText = trim($_POST['notes'] ?? '');
 
   // текущие значения из рецепта (чтобы уметь удалять/добавлять)
   $oldMainImage = (string)($recipe['image'] ?? '');
@@ -200,6 +204,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $recipe['time']  = $time;
     $recipe['level'] = $level;
     $recipe['image'] = $image;
+    $recipe['image_note'] = $image_note;
+    $recipe['reconstruction_confidence'] = $reconstruction_confidence;
+    $recipe['notes'] = lines_to_array($notesText);
 
     // галерея
     if (!empty($gallery)) {
@@ -264,6 +271,9 @@ $time  = $recipe['time'] ?? '';
 $level = $recipe['level'] ?? '';
 $image = $recipe['image'] ?? '';
 $source_label = $recipe['source']['label'] ?? '';
+$image_note = $recipe['image_note'] ?? '';
+$reconstruction_confidence = $recipe['reconstruction_confidence'] ?? '';
+$notesText = !empty($recipe['notes']) ? implode("\n", (array)$recipe['notes']) : '';
 
 $ingredientsText = !empty($recipe['ingredients']) ? implode("\n", (array)$recipe['ingredients']) : '';
 $stepsText       = !empty($recipe['steps']) ? implode("\n", (array)$recipe['steps']) : '';
@@ -346,6 +356,29 @@ small{color:#666}
 
 <label>Подпись к фото (например: Фото из интернета)</label>
 <input name="source_label" value="<?= h($source_label) ?>" placeholder="Фото из интернета">
+
+<label>Пометка к фото (опционально)</label>
+<textarea name="image_note" placeholder="Например: Фото иллюстративное. Оригинальное фото блюда не сохранилось."><?= h($image_note) ?></textarea>
+
+<label>Уровень уверенности восстановления (опционально)</label>
+<select name="reconstruction_confidence">
+  <?php
+    $confidenceOptions = [
+      '' => '— не указывать —',
+      'high' => 'Высокий',
+      'medium' => 'Средний',
+      'low' => 'Низкий',
+    ];
+
+    foreach ($confidenceOptions as $value => $label) {
+      $sel = ($reconstruction_confidence === $value) ? 'selected' : '';
+      echo '<option value="' . h($value) . '" ' . $sel . '>' . h($label) . '</option>';
+    }
+  ?>
+</select>
+
+<label>Примечания (опционально, каждое с новой строки)</label>
+<textarea name="notes" placeholder="Например: Температура 170–180°C указана как предположение, так как в записи её нет."><?= h($notesText) ?></textarea>
 
   <label>Ingredients (по одному на строку)</label>
   <textarea name="ingredients"><?= h($ingredientsText) ?></textarea>

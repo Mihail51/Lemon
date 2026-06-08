@@ -1,4 +1,12 @@
 <?php
+require __DIR__ . '/../_init.php';
+
+$userEmail = $_SESSION['user_email'] ?? '';
+
+if ($userEmail === '') {
+  header('Location: /login.php');
+  exit;
+}
 // submit/recipe.php — публичная форма "Предложить рецепт" (уходит в pending)
 
 function slugify(string $str): string {
@@ -42,6 +50,10 @@ $title = '';
 $minutes = '';
 $type = '';
 $intro = '';
+$sourceLabel = '';
+$imageNote = '';
+$confidence = '';
+$notesText = '';
 $ingredientsText = '';
 $stepsText = '';
 $authorName = '';
@@ -52,6 +64,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $minutes = (int)($_POST['minutes'] ?? 0);
   $type   = trim($_POST['type'] ?? '');
   $intro  = trim($_POST['intro'] ?? '');
+  $sourceLabel = trim($_POST['source_label'] ?? '');
+  $imageNote = trim($_POST['image_note'] ?? '');
+  $confidence = trim($_POST['reconstruction_confidence'] ?? '');
+  $notesText = trim($_POST['notes'] ?? '');
   $ingredientsText = trim($_POST['ingredients'] ?? '');
   $stepsText = trim($_POST['steps'] ?? '');
   $authorName = trim($_POST['author_name'] ?? '');
@@ -72,6 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $ingredients = normalize_lines($ingredientsText);
   $steps       = normalize_lines($stepsText);
+  $notes       = normalize_lines($notesText);
 
   // фото (опционально)
   $imagePath = null;
@@ -129,8 +146,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'type'  => $type,
         'speed' => $speed,
         'image' => $imagePath,
-        'source' => $imagePath ? '' : '', // можно расширить позже
+
+        // источник рецепта
+        'source' => $sourceLabel !== '' ? ['label' => $sourceLabel] : [],
+
+        // пометка к фото
+        'image_note' => $imageNote,
+
         'intro' => $intro,
+
+        // для восстановленных рецептов
+        'reconstruction_confidence' => $confidence,
+        'notes' => $notes,
+
         'ingredients' => $ingredients,
         'steps' => $steps,
 
@@ -151,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       } else {
         $success = 'Спасибо! Рецепт отправлен на модерацию.';
         // очистим поля
-        $title = $intro = $ingredientsText = $stepsText = $authorName = $authorContact = '';
+        $title = $intro = $sourceLabel = $imageNote = $confidence = $notesText = $ingredientsText = $stepsText = $authorName = $authorContact = '';
         $minutes = '';
         $type = '';
       }
@@ -227,6 +255,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <label>Короткое описание (опционально)</label>
   <textarea name="intro"><?= htmlspecialchars($intro, ENT_QUOTES, 'UTF-8') ?></textarea>
+
+  <label>Источник рецепта (опционально)</label>
+  <select name="source_label">
+    <?php
+      $sources = [
+        '' => '— не указывать —',
+        'Восстановлено по записи Татьяны' => 'Восстановлено по записи Татьяны',
+        'Семейный рецепт' => 'Семейный рецепт',
+        'YouTube' => 'YouTube',
+        'Книга' => 'Книга',
+        'Сайт' => 'Сайт',
+        'Другое' => 'Другое',
+      ];
+
+      foreach ($sources as $value => $label) {
+        $sel = ($sourceLabel === $value) ? 'selected' : '';
+        echo '<option value="' . htmlspecialchars($value, ENT_QUOTES, 'UTF-8') . '" ' . $sel . '>' .
+            htmlspecialchars($label, ENT_QUOTES, 'UTF-8') .
+            '</option>';
+      }
+    ?>
+  </select>
+
+  <label>Пометка к фото (опционально)</label>
+  <textarea name="image_note" placeholder="Например: Фото иллюстративное. Оригинальное фото блюда не сохранилось."><?= htmlspecialchars($imageNote, ENT_QUOTES, 'UTF-8') ?></textarea>
+
+  <label>Уровень уверенности восстановления (опционально)</label>
+  <select name="reconstruction_confidence">
+    <?php
+      $confidenceOptions = [
+        '' => '— не указывать —',
+        'high' => 'Высокий',
+        'medium' => 'Средний',
+        'low' => 'Низкий',
+      ];
+
+      foreach ($confidenceOptions as $value => $label) {
+        $sel = ($confidence === $value) ? 'selected' : '';
+        echo '<option value="' . htmlspecialchars($value, ENT_QUOTES, 'UTF-8') . '" ' . $sel . '>' .
+            htmlspecialchars($label, ENT_QUOTES, 'UTF-8') .
+            '</option>';
+      }
+    ?>
+  </select>
+
+  <label>Примечания (опционально, каждое с новой строки)</label>
+  <textarea name="notes" placeholder="Например: Температура 170–180°C указана как предположение, так как в записи её нет."><?= htmlspecialchars($notesText, ENT_QUOTES, 'UTF-8') ?></textarea>
 
   <label>Ингредиенты (каждый с новой строки) *</label>
   <textarea name="ingredients" required><?= htmlspecialchars($ingredientsText, ENT_QUOTES, 'UTF-8') ?></textarea>
