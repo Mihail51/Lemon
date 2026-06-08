@@ -55,7 +55,7 @@
 			<?php if (!empty($_SESSION['user_email'])): ?>
 				<a class="auth__link" href="/my-recipes.php">Мои рецепты</a>
 				<a class="auth__link" href="/submit/recipe.php">Добавить рецепт</a>
-				<a class="auth__link" href="/admin/pending.php">Админка</a>
+				<a class="auth__link" href="/admin/recipes.php">Админка</a>
 				<a class="auth__link" href="/logout.php">Выйти</a>
 			<?php else: ?>
 				<a class="auth__link" href="/login.php">Войти</a>
