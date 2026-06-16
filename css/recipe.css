@@ -505,6 +505,28 @@ details summary {
   color: #555;
 }
 
+.recipe__original-note {
+  margin-top: 28px;
+  padding: 18px 20px;
+  background: #f7f7f7;
+  border-left: 4px solid #d8c28f;
+  border-radius: 8px;
+}
+
+.recipe__original-note h3 {
+  margin: 0 0 14px;
+  font-size: 22px;
+  color: #333;
+}
+
+.recipe__original-note img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
 
 
 

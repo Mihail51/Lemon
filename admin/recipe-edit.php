@@ -41,6 +41,8 @@ $success = '';
 
 $currentImage = $recipe['image'] ?? null;
 
+$currentOriginalNoteImage = $recipe['original_note_image'] ?? '';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_recipe'])) {
 
   $title  = trim($_POST['title'] ?? '');
@@ -53,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_recipe'])) {
   $intro  = trim($_POST['intro'] ?? '');
   $reconstructionConfidence = trim($_POST['reconstruction_confidence'] ?? '');
   $notesText = trim($_POST['notes'] ?? '');
+  $originalNoteImage = $currentOriginalNoteImage;
 
   $ingredients = normalize_lines($_POST['ingredients'] ?? '');
   $steps       = normalize_lines($_POST['steps'] ?? '');
@@ -112,6 +115,63 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_recipe'])) {
         $errors[] = 'Файл слишком большой.';
       }
 
+      // ---------- ФОТО ОРИГИНАЛЬНОЙ ЗАПИСИ ТАТЬЯНЫ ----------
+
+if (!empty($_POST['remove_original_note_image']) && $currentOriginalNoteImage) {
+  $oldPath = __DIR__ . '/..' . $currentOriginalNoteImage;
+  if (is_file($oldPath)) {
+    @unlink($oldPath);
+  }
+  $originalNoteImage = '';
+}
+
+if (!empty($_FILES['original_note_image']) && $_FILES['original_note_image']['error'] !== UPLOAD_ERR_NO_FILE) {
+
+  if ($_FILES['original_note_image']['error'] !== UPLOAD_ERR_OK) {
+    $errors[] = 'Ошибка загрузки фото оригинальной записи.';
+  } else {
+    $tmp  = $_FILES['original_note_image']['tmp_name'];
+    $name = $_FILES['original_note_image']['name'];
+
+    $ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+    $allowed = ['jpg','jpeg','png','webp'];
+
+    if (!in_array($ext, $allowed, true)) {
+      $errors[] = 'Фото записи: разрешены только jpg/jpeg/png/webp.';
+    }
+
+    $maxBytes = 5 * 1024 * 1024;
+
+    if (($_FILES['original_note_image']['size'] ?? 0) > $maxBytes) {
+      $errors[] = 'Фото записи слишком большое.';
+    }
+
+    if (!$errors) {
+      $notesDirFs = __DIR__ . '/../img/notes/';
+
+      if (!is_dir($notesDirFs)) {
+        $errors[] = 'Папка img/notes не найдена.';
+      } else {
+        if ($currentOriginalNoteImage) {
+          $oldPath = __DIR__ . '/..' . $currentOriginalNoteImage;
+          if (is_file($oldPath)) {
+            @unlink($oldPath);
+          }
+        }
+
+        $fileName = date('Ymd-His') . '-note-' . bin2hex(random_bytes(4)) . '.' . $ext;
+        $targetFs = $notesDirFs . $fileName;
+
+        if (!move_uploaded_file($tmp, $targetFs)) {
+          $errors[] = 'Не удалось сохранить фото оригинальной записи.';
+        } else {
+          $originalNoteImage = '/img/notes/' . $fileName;
+        }
+      }
+    }
+  }
+}
+
       if (!$errors) {
 
         $uploadDirFs = __DIR__ . '/../img/uploads/';
@@ -159,6 +219,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_recipe'])) {
       'source' => $sourceLabel !== '' ? ['label' => $sourceLabel] : [],
 
       'image_note' => $imageNote,
+      'original_note_image' => $originalNoteImage,
       'intro' => $intro,
 
       'reconstruction_confidence' => $reconstructionConfidence,
@@ -185,6 +246,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_recipe'])) {
       $success = 'Изменения сохранены.';
       $recipe = $new;
       $currentImage = $imagePath;
+      $currentOriginalNoteImage = $originalNoteImage;
     }
   }
 }
@@ -341,6 +403,22 @@ $notesText = !empty($recipe['notes']) ? implode("\n", (array)$recipe['notes']) :
 
   <label>Пометка к фото (опционально)</label>
   <textarea name="image_note" placeholder="Например: Фото иллюстративное. Оригинальное фото блюда не сохранилось."><?= h($imageNote) ?></textarea>
+
+  <label>Фото оригинальной записи Татьяны (опционально)</label>
+
+<?php if (!empty($currentOriginalNoteImage)): ?>
+  <img class="preview" src="<?= h($currentOriginalNoteImage) ?>" alt="Оригинальная запись Татьяны">
+
+  <label style="font-weight:400">
+    <input type="checkbox" name="remove_original_note_image" value="1" style="width:auto">
+    Удалить текущее фото оригинальной записи
+  </label>
+<?php else: ?>
+  <div class="note">Фото оригинальной записи пока не загружено.</div>
+<?php endif; ?>
+
+<input type="file" name="original_note_image" accept="image/*">
+<div class="note">Можно загрузить фото листочка, тетради или другой записи, по которой восстановлен рецепт.</div>
 
   <label>Краткое описание (опционально)</label>
   <textarea name="intro"><?= h($intro) ?></textarea>

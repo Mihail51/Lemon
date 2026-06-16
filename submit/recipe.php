@@ -123,6 +123,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
   }
 
+  $originalNoteImage = null;
+
+  // фото оригинальной записи Татьяны (опционально)
+if (!empty($_FILES['original_note_image']) && $_FILES['original_note_image']['error'] !== UPLOAD_ERR_NO_FILE) {
+  if ($_FILES['original_note_image']['error'] !== UPLOAD_ERR_OK) {
+    $errors[] = 'Ошибка загрузки фото оригинальной записи.';
+  } else {
+    $tmp  = $_FILES['original_note_image']['tmp_name'];
+    $name = $_FILES['original_note_image']['name'];
+    $ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+    $allowed = ['jpg','jpeg','png','webp'];
+
+    if (!in_array($ext, $allowed, true)) {
+      $errors[] = 'Фото записи: разрешены только jpg, jpeg, png, webp.';
+    }
+
+    $maxBytes = 5 * 1024 * 1024;
+    if (($_FILES['original_note_image']['size'] ?? 0) > $maxBytes) {
+      $errors[] = 'Фото записи слишком большое (максимум 5 MB).';
+    }
+
+    if (!$errors) {
+      $notesDirFs = __DIR__ . '/../img/notes/';
+      if (!is_dir($notesDirFs)) {
+        $errors[] = 'Папка /img/notes/ не найдена.';
+      } else {
+        $unique = date('Ymd-His') . '-note-' . bin2hex(random_bytes(4));
+        $fileName = $unique . '.' . $ext;
+        $targetFs = $notesDirFs . $fileName;
+
+        if (!move_uploaded_file($tmp, $targetFs)) {
+          $errors[] = 'Не удалось сохранить фото оригинальной записи.';
+        } else {
+          $originalNoteImage = '/img/notes/' . $fileName;
+        }
+      }
+    }
+  }
+}
+
   if (!$errors) {
     $slugBase = slugify($title);
     $pendingDir = __DIR__ . '/../content/pending/';
@@ -152,6 +192,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // пометка к фото
         'image_note' => $imageNote,
+        'original_note_image' => $originalNoteImage,
 
         'intro' => $intro,
 
@@ -280,6 +321,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <label>Пометка к фото (опционально)</label>
   <textarea name="image_note" placeholder="Например: Фото иллюстративное. Оригинальное фото блюда не сохранилось."><?= htmlspecialchars($imageNote, ENT_QUOTES, 'UTF-8') ?></textarea>
+
+  <label>Фото оригинальной записи Татьяны (опционально)</label>
+  <input type="file" name="original_note_image" accept="image/*">
+  <div class="note">Можно загрузить фото листочка, тетради или другой записи, по которой восстановлен рецепт.</div>
 
   <label>Уровень уверенности восстановления (опционально)</label>
   <select name="reconstruction_confidence">

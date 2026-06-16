@@ -39,6 +39,9 @@ if (!$dataFile) {
 }
 
 $recipe = require $dataFile;
+
+$existingOriginalNoteImage = $recipe['original_note_image'] ?? '';
+
 $author = $recipe['_meta']['author_email'] ?? '';
 if ($author !== $userEmail) {
   http_response_code(403);
@@ -205,6 +208,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $recipe['level'] = $level;
     $recipe['image'] = $image;
     $recipe['image_note'] = $image_note;
+    $recipe['original_note_image'] = $existingOriginalNoteImage;
     $recipe['reconstruction_confidence'] = $reconstruction_confidence;
     $recipe['notes'] = lines_to_array($notesText);
 
@@ -295,6 +299,7 @@ textarea{min-height:140px}
 .ok{background:#e9ffe9;border:1px solid #b9e6b9;padding:10px;border-radius:10px}
 .err{background:#ffe9e9;border:1px solid #e6b9b9;padding:10px;border-radius:10px}
 small{color:#666}
+.original-note-preview{max-width:320px;max-height:240px;width:auto;height:auto;display:block;margin:10px 0;border:1px solid #ddd;border-radius:8px}
 </style>
 </head>
 <body>
@@ -359,6 +364,19 @@ small{color:#666}
 
 <label>Пометка к фото (опционально)</label>
 <textarea name="image_note" placeholder="Например: Фото иллюстративное. Оригинальное фото блюда не сохранилось."><?= h($image_note) ?></textarea>
+
+<label>Фото оригинальной записи Татьяны</label>
+
+<?php if (!empty($existingOriginalNoteImage)): ?>
+  <img
+  class="preview original-note-preview"
+  src="<?= htmlspecialchars($existingOriginalNoteImage, ENT_QUOTES, 'UTF-8') ?>"
+  alt="Оригинальная запись Татьяны"
+>
+  <div class="note">Фото оригинальной записи уже прикреплено к рецепту.</div>
+<?php else: ?>
+  <div class="note">Фото оригинальной записи пока не загружено.</div>
+<?php endif; ?>
 
 <label>Уровень уверенности восстановления (опционально)</label>
 <select name="reconstruction_confidence">

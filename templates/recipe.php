@@ -204,6 +204,18 @@ if (!empty($recipe['gallery']) && is_array($recipe['gallery'])) {
               </div>
             <?php endif; ?>
 
+            <?php if (!empty($recipe['original_note_image'])): ?>
+              <div class="recipe__original-note">
+                <h3>Оригинальная запись Татьяны</h3>
+                <a href="<?= htmlspecialchars($recipe['original_note_image'], ENT_QUOTES, 'UTF-8') ?>" target="_blank">
+                  <img
+                    src="<?= htmlspecialchars($recipe['original_note_image'], ENT_QUOTES, 'UTF-8') ?>"
+                    alt="Оригинальная запись Татьяны"
+                  >
+                </a>
+              </div>
+            <?php endif; ?>
+
             </div>
 
         </div>
