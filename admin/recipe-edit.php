@@ -329,7 +329,7 @@ $notesText = !empty($recipe['notes']) ? implode("\n", (array)$recipe['notes']) :
   </div>
 <?php endif; ?>
 
-<form method="post" enctype="multipart/form-data">
+<form method="post" class="recipe-form" enctype="multipart/form-data">
 
   <label>Название *</label>
   <input name="title" required value="<?= h($title) ?>">

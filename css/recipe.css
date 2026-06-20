@@ -668,3 +668,32 @@ details summary {
 }
 
 
+/* Lemon: расширяем страницу рецепта для длинного содержимого */
+
+#recipe_wrap .recipe {
+  height: auto;
+  min-height: 430px;
+  align-items: stretch;
+}
+
+#recipe_wrap .recipe .annotation {
+  height: auto;
+}
+
+#recipe_wrap .recipe .annotation .description {
+  height: auto;
+  max-height: none;
+  overflow: visible;
+}
+
+#recipe_wrap .recipe__original-note {
+  margin-top: 28px;
+}
+
+#recipe_wrap .recipe__original-note img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  max-height: none;
+  height: auto;
+}

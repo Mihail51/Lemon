@@ -5,12 +5,12 @@ return array (
   'level' => '',
   'type' => 'dessert',
   'speed' => 'long',
-  'image' => NULL,
+  'image' => '/img/uploads/pirog-s-orehami-i-izyumom-po-zapisi-tatyany.jpg',
   'source' => 
   array (
     'label' => 'Восстановлено по записи Татьяны',
   ),
-  'image_note' => '',
+  'image_note' => 'Фото иллюстративное. Оригинальное фото блюда не сохранилось.',
   'original_note_image' => '/img/notes/20260608-101757-note-7c8b9bcf.jpeg',
   'intro' => 'Домашний пирог с большим количеством орехов и изюма, восстановленный по краткой записи Татьяны. В записи сохранились основные пропорции ингредиентов, указание выпекать в обычной форме и время выпечки около 50 минут.',
   'reconstruction_confidence' => 'medium',
@@ -45,8 +45,9 @@ return array (
     'created_at' => '2026-06-08T10:17:57+00:00',
     'author_email' => 'Mihail51@Gmail.com',
     'author_name' => '',
-    'published_at' => '2026-06-08T10:19:48+00:00',
-    'moderated_at' => '2026-06-08T10:19:48+00:00',
-    'updated_at' => '2026-06-16T09:43:57+00:00',
+    'published_at' => '2026-06-20T16:43:47+00:00',
+    'moderated_at' => '2026-06-20T16:43:47+00:00',
+    'updated_at' => '2026-06-20T17:59:00+00:00',
+    'original_slug' => 'pirog-s-orehami-i-izyumom-po-zapisi-tatyany',
   ),
 );
