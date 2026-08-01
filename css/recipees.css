@@ -75,8 +75,20 @@
 .recipees figure figcaption .icon p:last-child {
 	background: url(../img/Icon/View_Icon.png) no-repeat left center;
 }
-.recipees-foto--empty{
+.recipees figure > a {
+  display: block;
+  text-decoration: none;
+}
+.recipees figure .recipees-foto--empty {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
   background: #f0f0f0;
+  color: #888888;
+  font-family: JosefinSans-Light;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 
 .recipees-source{

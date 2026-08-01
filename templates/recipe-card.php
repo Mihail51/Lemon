@@ -62,10 +62,12 @@ if (!empty($image)) {
 
     <?php else: ?>
 
-      <img
+      <div
         class="recipees-foto recipees-foto--empty"
-        src=""
-        alt="<?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?>">
+        role="img"
+        aria-label="No image">
+        NO IMAGE
+      </div>
 
     <?php endif; ?>
 
