@@ -32,6 +32,7 @@
   					<li><a href="../html/fotos.php" target="_blank" rel="noopener noreferrer">Photo Galleries</a></li>
   					<li><a href="../html/video.php" target="_blank" rel="noopener noreferrer">Videos</a></li>
   					<li><a href="../html/recipees.php" target="_blank" rel="noopener noreferrer">All Categories</a></li>
+  					<li><a href="/html/channels.php">SOURCES</a></li>
   				</ul>
   			</div>
   		</nav>
